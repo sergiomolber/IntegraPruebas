@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Prueba solicitud tiempo extra" skipped="0" tests="1" time="11.56" timestamp="2024-08-20 01:19:39"><testcase name="Crear una solicitud de tiempo extra"><error type="net.serenitybdd.core.exceptions.UnrecognisedException"/><system-err>null&#13;
+com.integra.ach.steps.IntegraInicioStep.seleccionarTipoEntidad(IntegraInicioStep.java:102)&#13;
+com.integra.ach.stepDefinitions.CrearSolicitudTiempoExtraStepDefinition.loginExitoso(CrearSolicitudTiempoExtraStepDefinition.java:24)&#13;
+✽.Login exitoso1 "EF" "operadorachaut@gmail.com" "ColombiaAch.2023*"(src/test/resources/com.integra.ach.features/SolicitudTiempoExtra.feature:6)&#13;
+</system-err></testcase></testsuite>
