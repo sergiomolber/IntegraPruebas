@@ -1,0 +1,2425 @@
+<html lang="en" ng-app="VolpayApp" class="no-js ng-scope" ng-controller="volpayAppController" style="background-size: cover;"><head><style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+
+    <!-- ngIf: !configData -->
+    <!-- ngIf: configData --><title ng-if="configData" class="ng-binding ng-scope">VolPay</title><!-- end ngIf: configData -->
+
+    <!-- ngIf: configData.ThemeName --><link rel="shortcut icon" ng-href="themes/volante/favicon.png" ng-if="configData.ThemeName" class="ng-scope" href="themes/volante/favicon.png"><!-- end ngIf: configData.ThemeName -->
+    <!-- ngIf: !configData.ThemeName -->
+    <link rel="stylesheet" href="lib/angular-ui-switch/angular-ui-switch.min.css">
+
+    <!-- <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="lib/bootstrap/bootstrap-v3.4.0.min.css"> -->
+    <link rel="stylesheet" href="lib/bootstrap-4.6.0/css/bootstrap.min.css"> 
+
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap-combined.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-toggle-master/css/bootstrap-toggle.min.css">
+
+    <link rel="stylesheet" href="lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-daterangepicker/daterangepicker-bs3.css">
+    <link rel="stylesheet" href="lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+
+    <link rel="stylesheet" href="lib/uniform/css/uniform.default.css">
+
+    <!-- <link rel="stylesheet" href="lib/jquery-ui/jquery-ui.css"> -->
+    <!-- latest jquery UI css-->
+    <link rel="stylesheet" href="lib/jquery-ui-1.13.1/jquery-ui.css">
+    
+    <link rel="stylesheet" href="lib/d3charts/nv.d3.css">
+
+    <link rel="stylesheet" href="templates/volpay/css/VPlayoutcss.css">
+    <link rel="stylesheet" href="templates/volpay/css/custom.css">
+    <link rel="stylesheet" href="themes/styles/volante.css" id="themeColor">
+    <link rel="stylesheet" href="themes/volante/styles.css" id="footerCss">
+
+    <link rel="stylesheet" href="templates/volpay/css/animateClass.css">
+    <link rel="stylesheet" href="templates/volpay/css/printStyles.css">
+    <link rel="stylesheet" href="templates/volpay/css/dashboardStyles.css">
+
+    <link rel="stylesheet" href="lib/js-beautify/web/third-party/codemirror/lib/codemirror.css">
+
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/ionicons-2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="lib/select2_angular/select2.min.css">
+    <!--<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+    <style>
+        #loaderDiv {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1100;
+            background-color: white;
+            opacity: .2;
+            
+        }
+        
+        .ajax-loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -32px;
+            /* -1 * image width / 2 */
+            margin-top: -32px;
+            /* -1 * image height / 2 */
+            display: block;
+        }
+    </style><script src="templates/hybrid/VPhybridloginCtrl.js" async=""></script><script src="templates/login/VPloginCtrl.js" async=""></script><link type="text/css" rel="stylesheet" href="templates/sidebar/VPsidebar.css"><link type="text/css" rel="stylesheet" href="templates/header/VPheader.css"><script src="templates/sidebar/VPsidebarCtrl.js" async=""></script><script src="templates/header/VPheaderCtrl.js" async=""></script><script src="modules/appCtrl.js" async=""></script><script src="templates/volpay/js/VPdirectivejs.js" async=""></script><script src="templates/web-form/webFormCtrl.js" async=""></script><script src="modules/homeprofile/homeprofileCtrl.js" async=""></script><script src="modules/fileupload/fileuploadCtrl.js" async=""></script><script src="modules/allfiles/fileListController.js" async=""></script><script src="modules/filedetail/filedetailCtrl.js" async=""></script>
+</head>
+
+<body class="hold-transition sidebar-mini modal-open" style="background-color: rgb(242, 242, 242); padding-right: 17px;">
+    <div pre-loader-circle="" class="pre-loader-circle hide">
+        <!-- <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div> -->
+    </div>
+    <!-- For BNYM data loading issue implementaion -->
+    <div id="loaderDiv" loader="" style="display: none;">
+        <img src="themes/icons/bnym/Loading.svg" class="ajax-loader">
+    </div>
+    <!-- uiView: --><div ui-view="" class="ng-scope"><div class="wrapper ng-scope">
+
+    <!-- <div data-ng-include="'templates/header/VPheaderFoDevice.html'" data-ng-controller="headerCtrl" class="main-header" ng-if="!iframeFlag">
+   </div> -->
+    <!-- ngIf: !iframeFlag --><!-- ngInclude: 'templates/header/VPheaderFoDevice.html' --><div data-ng-include="'templates/header/VPheaderFoDevice.html'" data-ng-controller="headerCtrl" class="main-header headForDevice ng-scope" ng-if="!iframeFlag" style=""><header class="ng-scope">
+    <div class="cont-header">
+        <div class="logo-header">
+            <img ng-src="themes/volante/logo.png" alt="logo" class="logo-default" width="100%" float="left" src="themes/volante/logo.png">
+        </div>
+        <div class="sidebar-toggle headerSideToggle menu-header">
+            <a data-toggle="offcanvas" role="button" data-ng-click="sideBar(1)">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<script class="ng-scope">
+    $(function() {
+        $('.scrollDiv').slimScroll({
+            color: '#ddd',
+            size: '7px',
+            height: '300px',
+            alwaysVisible: true
+        });
+    });
+    /*if (document.documentElement.clientWidth < 767 && document.documentElement.clientWidth >= 360) {
+		$(".dropdownPosition1").css("left","-75px");
+		$(".dropdownPosition2").css("left","-110px");
+		$(".dropdownPosition3").css("left","-145px");
+	}
+	else if(document.documentElement.clientWidth < 360){
+		$(".dropdownPosition1").css("left","-38px");
+		$(".dropdownPosition2").css("left","-88px");
+		$(".dropdownPosition3").css("left","-135px");
+	}
+	else if(document.documentElement.clientWidth > 767 && document.documentElement.clientWidth <= 1200){
+		$(".dropdownPosition1").css("left","-140px");
+		$(".dropdownPosition2").css("left","-125px");
+		$(".dropdownPosition3").css("left","-150px");
+	}*/
+</script></div><!-- end ngIf: !iframeFlag -->
+
+    <!-- ngIf: !iframeFlag && !pwSet --><!-- ngInclude: 'templates/sidebar/VPsidebar.html' --><div data-ng-include="'templates/sidebar/VPsidebar.html'" data-ng-controller="sidebarController" class="main-sidebar ng-scope" ng-if="!iframeFlag &amp;&amp; !pwSet" style="display: block;"><style class="ng-scope">
+    .coretheme {
+        margin-left: 7px;
+    }
+    
+    .bnymtheme {
+        margin-left: 7px;
+        margin-top: 0px !important;
+        padding: 10px;
+        background-color: #fff;
+    }
+    .subMenuAlign {
+        display: block !important; 
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;        
+    }  
+</style>
+<aside class="ng-scope" id="sidebarMenu">
+    <!-- showOnDesktop -->
+    <div class="row">
+        <div class="col-md-12 ng-hide" ng-show="showSmallLogo">
+            <div class="smallLogo" style="margin-bottom:15px;">
+                <img ng-src="themes/volante/favicon.png" alt="logo" class="logo-default" style="width:30px;margin-left:10px;" src="themes/volante/favicon.png">
+            </div>
+        </div>
+
+        <div class="col-md-8" ng-show="configData.ThemeName">
+            <div class="appLogo coretheme" style="margin-left:7px;" ng-class="{'coretheme': configData.ThemeName != 'bynm','bnymtheme':configData.ThemeName == 'bnym'}">
+                <img ng-src="themes/volante/logo.png" alt="logo" class="logo-default" style="width:145px;" src="themes/volante/logo.png">
+            </div>
+        </div>
+        <!-- <div class="col-md-8" ng-if="configData.ThemeName=='bnym'">
+					<div class="appLogo" style="margin-left:7px;margin-top:0px !important; padding: 10px; background-color: #fff;">
+						<img src="themes/{{configData.ThemeName}}/logo.png" alt="logo" class="logo-default" style="width:145px;">
+					</div>					
+				</div> -->
+        <div class="col-md-4">
+            <li style="text-align: right;padding: 10px 11px;" class="sidebarSideToggle">
+                <a class="sidebar-toggle" data-toggle="offcanvas" role="button" data-ng-click="sideBar(1);">
+                    <i class="fa fa-bars" aria-hidden="true" title="Hide Menu" style="border: 5px solid #5e6b7b;display:inline;margin-right:2px;"></i>
+                </a>
+            </li>
+        </div>
+        <div class="clearfix"></div>
+
+    </div>
+    <!--<div class="row showOnDesktop" ng-show="showSmallLogo" style="margin-top:10px;">
+                <div class="col-md-12">
+                    <div class="smallLogo">
+                        <img src="themes/{{configData.ThemeName}}/favicon.png" alt="logo" class="logo-default" style="width:30px;margin-left:10px;">
+                    </div>
+                </div>
+            </div>-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- sidebar -->
+            <section class="sidebar">
+
+                <!-- <li class="sidebar-search-wrapper">
+                    <form class="sidebar-search ng-pristine ng-valid" ng-enter="return false" style="margin: 22px 5px 22px 5px;">
+                        <div class="input-group">
+                            <input type="text" class="form-control sidebarSearch" placeholder="Search..." style="pointer-events:none">
+                                <span class="input-group-btn">
+                                    <i class="fa fa-search" title="Search"></i>
+                                </span>
+                        </div>
+                    </form>
+                </li> -->
+
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: auto;"><ul class="sidebar-menu pb-5" style="margin-top: 10px; overflow: hidden; width: auto; height: 524px;">
+                    <!-- ngRepeat: val in sidebarVal --><li class="treeview menuli ng-scope" id="Home" data-ng-repeat="val in sidebarVal">
+                        <a ng-click="parentMenu($event)" title="Inicio " class="ParentMenu">
+                            <i class="fa fa-home"></i>
+                            <!-- <span class="mName" translate>{{'Sidebar.'+ (val.ParentName |specialCharactersRemove |removeSpace)}}</span> -->
+                            <span class="mName ng-binding">Inicio </span>
+
+                            <!-- ngIf: val.subMenu.length --><i ng-if="val.subMenu.length" style="position:relative;top:-1px;right:0;text-align: center;margin: 0;font-size:10px;" class="fa fa-plus"></i><!-- end ngIf: val.subMenu.length -->
+                        </a>
+
+                        <!-- ngIf: val.subMenu.length --><ul class="sidebarSubMenu ng-scope" ng-if="val.subMenu.length" style="display: none;">
+                            <!-- ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="HomePage" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Perfil de Inicio">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Perfil de Inicio</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="MyProfile" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Mi Perfil">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Mi Perfil</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="MyDashboard" data-ng-repeat="subVal in val.subMenu" style="display: none;">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Mi Tablero">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Mi Tablero</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu -->
+                        </ul><!-- end ngIf: val.subMenu.length -->
+                    </li><!-- end ngRepeat: val in sidebarVal --><li class="treeview menuli ng-scope open" id="PaymentModule" data-ng-repeat="val in sidebarVal">
+                        <a ng-click="parentMenu($event)" title="Módulo de Transferencias" class="ParentMenu sidebarSubMenuSelected">
+                            <i class="fa fa-exchange"></i>
+                            <!-- <span class="mName" translate>{{'Sidebar.'+ (val.ParentName |specialCharactersRemove |removeSpace)}}</span> -->
+                            <span class="mName ng-binding">Módulo de Transferencias</span>
+
+                            <!-- ngIf: val.subMenu.length --><i ng-if="val.subMenu.length" style="position:relative;top:-1px;right:0;text-align: center;margin: 0;font-size:10px;" class="fa fa-minus"></i><!-- end ngIf: val.subMenu.length -->
+                        </a>
+
+                        <!-- ngIf: val.subMenu.length --><ul class="sidebarSubMenu ng-scope" ng-if="val.subMenu.length" style="display: block;">
+                            <!-- ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="AllPayments" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Todos los Pagos">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Todos los Pagos</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="AllPaymentsDashboard" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Tablero de Pagos">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Tablero de Pagos</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="AllTransactions" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Todas las Transacciones">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Todas las Transacciones</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope sideMenuSelected" id="ReceivedInstructions" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Instrucciones Recibidas">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Instrucciones Recibidas</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="FileUpload" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Subir Archivo">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Subir Archivo</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu -->
+                        </ul><!-- end ngIf: val.subMenu.length -->
+                    </li><!-- end ngRepeat: val in sidebarVal --><li class="treeview menuli ng-scope" id="ClearingReport" data-ng-repeat="val in sidebarVal">
+                        <a ng-click="parentMenu($event)" title="Reportes de Compensación" class="ParentMenu">
+                            <i class="fa fa-file"></i>
+                            <!-- <span class="mName" translate>{{'Sidebar.'+ (val.ParentName |specialCharactersRemove |removeSpace)}}</span> -->
+                            <span class="mName ng-binding">Reportes de Compensación</span>
+
+                            <!-- ngIf: val.subMenu.length --><i ng-if="val.subMenu.length" style="position:relative;top:-1px;right:0;text-align: center;margin: 0;font-size:10px;" class="fa fa-plus"></i><!-- end ngIf: val.subMenu.length -->
+                        </a>
+
+                        <!-- ngIf: val.subMenu.length --><ul class="sidebarSubMenu ng-scope" ng-if="val.subMenu.length">
+                            <!-- ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="BankWorksheet" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Planilla de Compensación">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Planilla de Compensación</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="BalanceSheet" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Planilla Consolidada">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Planilla Consolidada</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="CycleSummary" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Cuadre y Conciliación">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Cuadre y Conciliación</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu -->
+                        </ul><!-- end ngIf: val.subMenu.length -->
+                    </li><!-- end ngRepeat: val in sidebarVal --><li class="treeview menuli ng-scope" id="UsersandRoles" data-ng-repeat="val in sidebarVal">
+                        <a ng-click="parentMenu($event)" title="Usuarios y Roles" class="ParentMenu">
+                            <i class="fa fa-users"></i>
+                            <!-- <span class="mName" translate>{{'Sidebar.'+ (val.ParentName |specialCharactersRemove |removeSpace)}}</span> -->
+                            <span class="mName ng-binding">Usuarios y Roles</span>
+
+                            <!-- ngIf: val.subMenu.length --><i ng-if="val.subMenu.length" style="position:relative;top:-1px;right:0;text-align: center;margin: 0;font-size:10px;" class="fa fa-plus"></i><!-- end ngIf: val.subMenu.length -->
+                        </a>
+
+                        <!-- ngIf: val.subMenu.length --><ul class="sidebarSubMenu ng-scope" ng-if="val.subMenu.length">
+                            <!-- ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="UserSessionManagement" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Gestión de Sesiones">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Gestión de Sesiones</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="TimeRestrictions" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Restricción de Horarios">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Restricción de Horarios</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="OTPException" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Excepción de OTP">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Excepción de OTP</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu -->
+                        </ul><!-- end ngIf: val.subMenu.length -->
+                    </li><!-- end ngRepeat: val in sidebarVal --><li class="treeview menuli ng-scope" id="ReferenceData" data-ng-repeat="val in sidebarVal">
+                        <a ng-click="parentMenu($event)" title="Dato de Referencia" class="ParentMenu">
+                            <i class="fa fa-calendar"></i>
+                            <!-- <span class="mName" translate>{{'Sidebar.'+ (val.ParentName |specialCharactersRemove |removeSpace)}}</span> -->
+                            <span class="mName ng-binding">Dato de Referencia</span>
+
+                            <!-- ngIf: val.subMenu.length --><i ng-if="val.subMenu.length" style="position:relative;top:-1px;right:0;text-align: center;margin: 0;font-size:10px;" class="fa fa-plus"></i><!-- end ngIf: val.subMenu.length -->
+                        </a>
+
+                        <!-- ngIf: val.subMenu.length --><ul class="sidebarSubMenu ng-scope" ng-if="val.subMenu.length">
+                            <!-- ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="Calendar" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Calendario">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Calendario</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu -->
+                        </ul><!-- end ngIf: val.subMenu.length -->
+                    </li><!-- end ngRepeat: val in sidebarVal --><li class="treeview menuli ng-scope" id="OnboardingData" data-ng-repeat="val in sidebarVal">
+                        <a ng-click="parentMenu($event)" title="Vinculación de Entidades" class="ParentMenu">
+                            <i class="fa fa-crosshairs"></i>
+                            <!-- <span class="mName" translate>{{'Sidebar.'+ (val.ParentName |specialCharactersRemove |removeSpace)}}</span> -->
+                            <span class="mName ng-binding">Vinculación de Entidades</span>
+
+                            <!-- ngIf: val.subMenu.length --><i ng-if="val.subMenu.length" style="position:relative;top:-1px;right:0;text-align: center;margin: 0;font-size:10px;" class="fa fa-plus"></i><!-- end ngIf: val.subMenu.length -->
+                        </a>
+
+                        <!-- ngIf: val.subMenu.length --><ul class="sidebarSubMenu ng-scope" ng-if="val.subMenu.length">
+                            <!-- ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="Service" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Servicios">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Servicios</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="Party" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Entidades">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Entidades</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="Transport" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Transporte">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Transporte</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="PartyServiceAssociation" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Contratos">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Contratos</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu -->
+                        </ul><!-- end ngIf: val.subMenu.length -->
+                    </li><!-- end ngRepeat: val in sidebarVal --><li class="treeview menuli ng-scope" id="SystemData" data-ng-repeat="val in sidebarVal">
+                        <a ng-click="parentMenu($event)" title="Datos del Sistema" class="ParentMenu">
+                            <i class="fa fa-television"></i>
+                            <!-- <span class="mName" translate>{{'Sidebar.'+ (val.ParentName |specialCharactersRemove |removeSpace)}}</span> -->
+                            <span class="mName ng-binding">Datos del Sistema</span>
+
+                            <!-- ngIf: val.subMenu.length --><i ng-if="val.subMenu.length" style="position:relative;top:-1px;right:0;text-align: center;margin: 0;font-size:10px;" class="fa fa-plus"></i><!-- end ngIf: val.subMenu.length -->
+                        </a>
+
+                        <!-- ngIf: val.subMenu.length --><ul class="sidebarSubMenu ng-scope" ng-if="val.subMenu.length">
+                            <!-- ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="ApplicationConfig" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Configuraciones de la Aplicación ">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Configuraciones de la Aplicación </span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu -->
+                        </ul><!-- end ngIf: val.subMenu.length -->
+                    </li><!-- end ngRepeat: val in sidebarVal --><li class="treeview menuli ng-scope" id="Reports" data-ng-repeat="val in sidebarVal">
+                        <a ng-click="parentMenu($event)" title="Reportes" class="ParentMenu">
+                            <i class="fa fa-file-text-o"></i>
+                            <!-- <span class="mName" translate>{{'Sidebar.'+ (val.ParentName |specialCharactersRemove |removeSpace)}}</span> -->
+                            <span class="mName ng-binding">Reportes</span>
+
+                            <!-- ngIf: val.subMenu.length --><i ng-if="val.subMenu.length" style="position:relative;top:-1px;right:0;text-align: center;margin: 0;font-size:10px;" class="fa fa-plus"></i><!-- end ngIf: val.subMenu.length -->
+                        </a>
+
+                        <!-- ngIf: val.subMenu.length --><ul class="sidebarSubMenu ng-scope" ng-if="val.subMenu.length">
+                            <!-- ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="StatisticsReports" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Reporte Estadísticas">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Reporte Estadísticas</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="ACHReports" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Informes ACH">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Informes ACH</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu -->
+                        </ul><!-- end ngIf: val.subMenu.length -->
+                    </li><!-- end ngRepeat: val in sidebarVal --><li class="treeview menuli ng-scope" id="Addon" data-ng-repeat="val in sidebarVal">
+                        <a ng-click="parentMenu($event)" title="Catálogos" class="ParentMenu">
+                            <i class="fa fa-building-o"></i>
+                            <!-- <span class="mName" translate>{{'Sidebar.'+ (val.ParentName |specialCharactersRemove |removeSpace)}}</span> -->
+                            <span class="mName ng-binding">Catálogos</span>
+
+                            <!-- ngIf: val.subMenu.length --><i ng-if="val.subMenu.length" style="position:relative;top:-1px;right:0;text-align: center;margin: 0;font-size:10px;" class="fa fa-plus"></i><!-- end ngIf: val.subMenu.length -->
+                        </a>
+
+                        <!-- ngIf: val.subMenu.length --><ul class="sidebarSubMenu ng-scope" ng-if="val.subMenu.length">
+                            <!-- ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="VPHTransactionTypes" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Tipos de Transacciónes">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Tipos de Transacciónes</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="VPHTrxTypeConstraints" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Restricciones">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Restricciones</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="PartyTypes" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Tipos de Entidad">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Tipos de Entidad</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="AdminAccounts" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Cuentas de Administradoras">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Cuentas de Administradoras</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="Limits" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Límites">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Límites</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="MinimumAmountFEReport" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Reporte Monto Mínimo x EF">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Reporte Monto Mínimo x EF</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="RegisterAccounts" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Inscripción de Cuentas">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Inscripción de Cuentas</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="ACHRegisterAccounts" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Autorización de Cuentas">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Autorización de Cuentas</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="VPHCycleTime" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Ciclo Tiempo">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Ciclo Tiempo</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="VPHCYCLEEXTENSIONACH" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Solicitud Tiempo Extra ACH">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Solicitud Tiempo Extra ACH</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="Notifications" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Notificaciones">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Notificaciones</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="Events" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Eventos">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Eventos</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="Inbox" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Mensajes Recibidos">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Mensajes Recibidos</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="MailConfiguration" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Configuración de Correo">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Configuración de Correo</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu --><li class="treeview subMenuli ng-scope" id="AuditLogs" data-ng-repeat="subVal in val.subMenu">
+
+                                <span class="triangleLeft"></span>
+                                <a ng-click="gotoPage($event,val,subVal)" title="Logs de Eventos">
+                                    <!-- ngIf: showSmallLogo -->
+
+                                    <!-- <span translate>{{'Sidebar.'+(subVal.Name|specialCharactersRemove|removeSpace)}}</span> -->
+                                    <span class="subMenuAlign ng-binding" style="white-space: normal !important;">Logs de Eventos</span>
+                                </a>
+                            </li><!-- end ngRepeat: subVal in val.subMenu -->
+                        </ul><!-- end ngIf: val.subMenu.length -->
+                    </li><!-- end ngRepeat: val in sidebarVal -->
+                </ul><div class="slimScrollBar" style="background: rgb(221, 221, 221); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 455.35px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+            </section>
+        </div>
+    </div>
+</aside>
+<script class="ng-scope">
+    var mediaQuery = window.matchMedia("(max-width: 991px)");
+
+    if (mediaQuery.matches) {
+        $(function() {
+            $('.sidebar-menu').slimScroll({
+                color: '#ddd',
+                size: '7px',
+                height: '350px',
+                alwaysVisible: true
+            });
+        });
+    } else {
+        $(function() {
+            $('.sidebar-menu').slimScroll({
+                color: '#ddd',
+                size: '7px',
+                height: (configData.ThemeName == 'volante') ? ($(window).outerHeight() - $('.fixedfooter').height() - 50 + 'px') : ($(window).outerHeight() - 150 + 'px'),
+                alwaysVisible: true
+            });
+        });
+    }
+</script></div><!-- end ngIf: !iframeFlag && !pwSet -->
+
+    <div class="content-wrapper" ng-class="{fullwidth: iframeFlag == true}" style="margin-left: 230px;">
+        <!-- uiView: --><div ui-view="" class="fadeUp ng-scope"><style class="ng-scope">
+    .customPanel .card-body {
+        background-color: #fff;
+    }
+
+    .tabbable-custom>.nav-tabs>.nav-item>a.active {
+        border-top: 0.188rem solid #F3565D;
+        margin-top: 0;
+        position: relative;
+    }
+
+    pre{
+        display: block;
+        padding: 0.594rem;
+        margin: 0 0 0.625rem;
+        font-size: 0.813rem;
+        line-height: 1.42857143;
+        color: #333;
+        word-break: break-all;
+        word-wrap: break-word;
+        background-color: #f5f5f5;
+        border: 0.063rem solid #ccc;
+    }
+
+    @media (min-width: 576px){
+        .modal-dialog {
+        max-width: 40%;
+        margin: 1.75rem auto;
+        }
+    }
+
+    .positnInherit{
+        position: inherit;
+    }
+
+    .modalIndex{
+        z-index:9999;
+    }
+
+    .modalIdle{
+        top: 20;
+        margin-right: 3.125rem;
+    }
+
+    .width50{
+        width:50%
+    }
+
+    .mTopdisp{
+        margin-top:0.313rem
+    }
+
+    .filedtlsDisp{
+        padding:0.625rem 0.938rem;
+    }
+
+    .insIdDisp{
+        cursor:pointer;
+        display:inline-block;
+        padding-right: 0.313rem;
+    }
+
+    .transpnameDisp{
+        cursor:pointer;
+        display:inline-block;
+        font-weight:700;
+        border-left:0.063rem solid;
+        padding-left:0.625rem;
+        padding-right: 0.313rem;
+    }
+
+    .iconAngle{
+        padding-top:0.125rem;
+    }
+
+    .clearBoth{
+        clear:both
+    }
+
+    .batchStatus{
+        padding-right: 0.625rem;
+    }
+
+    .transpInfoDisp{
+        padding: 0.625rem 0rem !important;
+    }
+
+    .hrAlign{
+        margin: 0.625rem !important;
+    }
+
+    .fileLineHgt{
+        line-height:1.438rem;
+    }
+
+    .hrInsId{
+        margin: 0.625rem 0 !important;
+    }
+
+    .paymtInfoBdy{
+        margin:0.313rem 0.125rem;
+        line-height:1.563rem;
+        border:0.063rem solid #eee;
+    }
+
+    .cursorPoint{
+        cursor:pointer;
+    }
+
+    .angleCollpse{
+        padding:0.313rem;
+    }
+
+    .collpaseUpper{
+        margin:0.313rem 0rem;
+        line-height:1.563rem;
+        border:0.063rem solid #eee;
+        padding-left: 0em;
+        padding-right: 0em;
+    }
+
+    .navDisp{
+        border-right:0.063rem solid #ccc;
+        border-top:0.063rem solid #ccc;
+    }
+
+    .btnAlign{
+        margin-top:0.313rem;
+        display:inline-block;
+        margin-right:0.375rem;
+    }
+
+    .dispNone{
+        display:none
+    }
+
+    .insIdAlign{
+        color:#337ab7;
+        cursor: pointer;
+    }
+
+    .preDisp{
+        background-color:transparent !important;
+        border: 0rem solid #ccc !important;
+        padding: 0rem !important;
+        font-size:0.813rem !important;
+        font-family: 'Open Sans', sans-serif; 
+        margin-top:0rem !important; 
+        margin-bottom:0rem !important;
+    }
+
+    .iconEye{
+        cursor:pointer;
+        float: left;
+        padding: 0.188rem; 
+        white-space:nowrap;
+    }
+
+    .modalDataAlign{
+        min-width:70% !important
+    }
+
+    .modalPre{
+        margin:0rem !important;
+    }
+
+    .btnResend{
+        border-radius:0.625rem !important;
+        font-weight:700
+    }
+
+    .modalDataHeader{
+        background-color:#1CAF9A;
+        color:#fff
+    }
+
+    .modalDataTitle{
+        line-height:0.5 !important;
+    }
+
+    .width80{
+        width:80%
+    }
+
+    .sectionPaddng{
+        padding:0.625rem;
+    }
+
+    .formField{
+        margin-top: 0.313rem;
+    }
+
+    .backgroundTransp{
+        background-color: transparent;
+    }
+
+    .fontBold{
+        font-weight:bold;
+    }
+
+    .asterisk{
+        color:#e02222;
+        font-size:0.75rem;
+        padding-left:0.125rem
+    }
+
+    .verticalAlign{
+        resize:vertical
+    }
+
+    .borderNone{
+        border:none;
+    }
+
+    .dispValueAlign{
+        padding:0.313rem
+    }
+
+    .dateTimeAlign{
+        padding-right:0.938rem;
+        padding-left:0.75rem;
+        float:left;
+    }
+
+    .requiredFld{
+        display:block;
+        margin:0;
+        color:#EF1C1C !important
+    }
+
+    .sectionAlign{
+        border: 0.063rem solid #cecbcb;
+        margin: 0rem 0.625rem 0.313rem 0rem;
+    }
+
+    .sGrpDisp{
+        border:0.313rem solid #cecbcb;
+        padding:0.313rem;
+        margin-top:0.313rem;
+    }
+
+    .actionFtr{
+        background: transparent; 
+        border: 0;
+    }
+
+    .btnCancel{
+        margin-left:0.625rem
+    }
+    .nav-item>a {
+        color: #337ab7;
+    }
+    .nav-item>a:focus, .nav-item>a:hover {
+        color: #23527c;
+        text-decoration: underline;
+    }
+    .alink{
+        color: #337ab7;
+    }
+
+</style>
+
+<!-- BEGIN PAGE HEADER-->
+<div class="breadCrumb positnInherit ng-scope" ng-controller="activeController" style="top: 435px; z-index: 3;">
+    <div class="row">
+        <div class="col-md-6 ">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-exchange"></i>
+                    <a href="javascript:void(0);" translate="" class="removeCursor ng-scope">Módulo de Transferencias</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>                
+                <!-- ngIf: ((!fromOutputSummary) || (fromOutputSummary.from == 'filedetail') || (fromOutputSummary.from == 'allpayments')) --><span ng-if="((!fromOutputSummary) || (fromOutputSummary.from == 'filedetail') || (fromOutputSummary.from == 'allpayments'))" class="ng-scope"></span><!-- end ngIf: ((!fromOutputSummary) || (fromOutputSummary.from == 'filedetail') || (fromOutputSummary.from == 'allpayments')) -->
+                    <li>
+                        <a href="#/app/instructions" translate="" class="ng-scope">Instrucciones Recibidas</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="ng-binding">
+                        233960
+                    </li>
+                
+
+                <!-- ngIf: fromOutputSummary.from == 'allconfirmations' -->
+
+                <!-- ngIf: fromOutputSummary.input.from == 'distributedinstructions' -->
+            </ul>
+        </div>
+        <!--<div class="clearBoth">    </div>-->
+        <div class="col-md-6 headerVals">
+            <!-- ngInclude: 'templates/header/VPheader.html' --><div data-ng-include="'templates/header/VPheader.html'" data-ng-controller="headerCtrl" class="ng-scope"><style class="ng-scope">
+   .carousel {
+		background-color: #cad5eb;
+		border: solid black;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border-radius: 10%;
+		width: 203%;
+		max-width: 100vw;
+		margin-top: 45px;
+		left:-104%;
+   }
+   .carousel-item {
+		text-align: center;
+		font-weight: bold;
+   }
+    .dropdown-submenu {
+        position: relative;
+        display: block;
+    }
+    
+    .dropdown-submenu>.dropdown-menu {
+        top: 0;
+        right: 100% !important;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px 6px;
+        border-radius: 0 6px 6px 6px;
+		left:-10rem; /* 10rem is the min-width of dropdown-menu */
+    }
+    
+    ul.myhead {
+        float: right;
+        margin-right: -0.4rem;
+    }
+    
+    ul.myhead li:hover>ul.dropdown-menu {
+        display: block;
+		position: fixed;
+    }
+    
+    .dropdown>.dropdown-menu:after,
+    .dropdown-toggle>.dropdown-menu:after,
+    .btn-group>.dropdown-menu:after,
+    .dropdown-menu-excel:after {
+        border: none;
+    }
+    
+    .switch-drop {
+        border: none;
+        padding: 0;
+        left: auto;
+    }
+    
+    .switch-drop__list {
+        right: 0;
+        left: auto;
+        border: none;
+        padding: 0;
+    }
+	.navbar-nav .nav-link {
+		padding-right: 15px;
+		padding-left: 15px;
+		color: black;
+	}
+	.scrollDivNote {
+		position: relative; 
+		overflow: hidden; 
+		width: 250px; 
+		height: 280px; 
+		background-color: #f9f9f9;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	}
+	.dropdown:hover .nav-link  {background-color: #eee;}
+  
+    .dropdown-content :hover a  {
+        color:black !important;      
+     }
+
+    .dropdown-content>li>a {	
+	    border-bottom: none;
+     }
+</style>
+
+
+<!-- <div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="col-xs-9">
+						<div class="appLogo">
+							<img src="themes/{{configData.ThemeName}}/logo.png" alt="logo" class="logo-default">
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<a class="sidebar-toggle headerSideToggle" data-toggle="offcanvas" role="button" data-ng-click="sideBar(1);">
+							<i class="fa fa-bars" aria-hidden="true" style="border: 5px solid #5e6b7b;font-size:14px;"></i>
+						</a>
+				   </div>
+		
+				   
+				</div>  -->
+<div class="col-md-12 col-sm-12 col-xs-12 topMenuIcons ng-scope">
+    <div class="notiIcons">
+        <ul>
+			<a>
+				<!-- ngIf: multilingualData --><i class="fa fa-language fa-lg ng-scope" aria-hidden="true" ng-if="multilingualData"></i><!-- end ngIf: multilingualData -->
+				<!-- ngIf: multilingualData --><span ng-if="multilingualData" class="ng-scope">
+					<select style="border:none;" class="dropdown-toggle namecls ng-pristine ng-untouched ng-valid ng-not-empty" ng-model="userselected" name="Multilingual" id="multilingual" ng-change="onChangeDataSelect(userselected)">
+					<!-- <option value="">--Select--</option> -->
+					<!-- ngRepeat: Data in multilingualData.supported_languages --><option ng-repeat="Data in multilingualData.supported_languages" value="en_US" class="ng-binding ng-scope">English</option><!-- end ngRepeat: Data in multilingualData.supported_languages --><option ng-repeat="Data in multilingualData.supported_languages" value="es_ES" class="ng-binding ng-scope" selected="selected">Español</option><!-- end ngRepeat: Data in multilingualData.supported_languages -->
+					
+				</select></span><!-- end ngIf: multilingualData -->   
+			</a>
+            <li class="dropdown headDropdownList">
+                <a class="anchor">
+                    <i class="fa fa-bell-o" aria-hidden="true"></i>
+                    <span class="badge badge-default ng-binding"></span>
+                </a>
+                <ul class="dropdown-content ulbackground dropdownPosition1">
+
+                    <li class="external1">
+                        <div class="bold1 ng-binding"> pending notifications</div>
+
+                    </li>
+                    <div class="scrollDivNote">
+                        <!-- ngRepeat: Nofitiocations in Notifi.NotifyContent -->
+
+                    </div>
+                    <li class="view-list">
+                        <!-- ngIf: NotifCount -->
+                    </li>
+                </ul>
+
+            </li>
+
+            <!--<li class="dropdown headDropdownList">
+						<a class="anchor">
+						  <i class="fa fa-envelope" aria-hidden="true"></i>
+							<span class="badge badge-default ng-binding">2</span>
+						</a>
+						<ul class="dropdown-content ulbackground dropdownPosition2">
+							<li class="external1">
+								<div class="bold1">18 pending notifications</div>
+								
+							</li>
+							<div class="scrollDiv">
+							<li class="dropdown-menu-list">
+								
+										<a href="javascript:void(0);">
+										<span class="label label-sm label-icon label-success">
+										<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+										</span>
+										<span class="status">RE:FILE STATUS NOTIFICATION</span>
+										<span class="Ack">
+										 Viewed
+										</span>
+										</a>
+							</li>
+							
+							<li class="dropdown-menu-list">
+								
+										<a href="javascript:void(0);">
+										<span class="label label-sm label-icon label-success">
+										<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+										</span>
+										<span class="status">RE:FILE STATUS NOTIFICATION</span>
+										<span class="Ack">
+										 Viewed
+										</span>
+										</a>
+							</li>
+							
+							</div>
+							<li class="view-list"><div class="bold2">
+								<a href="javascript:void(0);">view all</a>
+								</div>
+							</li>
+							
+							
+							
+						</ul>
+					  </li>-->
+
+            <!--<li class="dropdown headDropdownList">
+						<a class="anchor">
+						   <i class="fa fa-calendar-o" aria-hidden="true"></i>
+		
+							<span class="badge badge-default ng-binding">3</span>
+						</a>
+		
+		
+						<ul class="dropdown-content ulbackground dropdownPosition3">
+							<li class="external1">
+								<div class="bold1">12 pending notifications</div>
+								
+							</li>
+							<div class="scrollDiv">
+							<li class="dropdown-menu-list">
+								
+										<a href="javascript:void(0);">
+										<span class="label label-sm label-icon label-success">
+										<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+										</span>
+										<span class="status">RE:FILE STATUS NOTIFICATION</span>
+										<span class="Ack">
+										 Viewed
+										</span>
+										</a>
+							</li>
+							<li class="dropdown-menu-list">
+								
+										<a href="javascript:void(0);">
+										<span class="label label-sm label-icon label-success">
+										<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+										</span>
+										<span class="status">RE:FILE STATUS NOTIFICATION</span>
+										<span class="Ack">
+										 Viewed
+										</span>
+										</a>
+							</li>
+							<li class="dropdown-menu-list">
+								
+										<a href="javascript:void(0);">
+										<span class="label label-sm label-icon label-success">
+										<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+										</span>
+										<span class="status">RE:FILE STATUS NOTIFICATION</span>
+										<span class="Ack">
+										 Viewed
+										</span>
+										</a>
+							</li>
+							</div>
+							<li class="view-list"><div class="bold2">
+								<a href="javascript:void(0);">view all</a>
+								</div>
+							</li>
+						</ul>
+					  </li>-->
+
+
+            	<ul class="nav navbar-nav myhead">        
+         
+				<div class="dropdown">
+					<a class="nav-link"><img alt="" class="img-circle userImg" src="themes/images/profile.png">
+						<span class="namecls ng-binding">useradminapp@gmail.com</span> <i class="fa fa-angle-down" style="border: none !important;"></i></a>
+				
+						
+					<div class="dropdown-content" style="margin-right: -0.8rem;">
+                        <li>
+						<a href="#/app/myprofile" class="ng-binding">&nbsp;
+							<i class="fa fa-user-o" aria-hidden="true"></i>Mi Perfil</a>
+						
+                        </li>
+                        <!-- ngIf: RoleList.length --><li class="dropdown dropdown-submenu dropright ng-scope" ng-if="RoleList.length"><a href="javascript:void(0);" class="ng-binding"><i class="fa fa-user-o" aria-hidden="true" style="padding-left: 0.5rem;"></i>&nbsp; Cambiar rol<i class="fa fa-angle-right"></i></a>
+							<ul class="dropdown-menu switch-drop dataGroup" style="float:left;position: absolute;">
+								<div class="scrollUser2" style="max-height: 200px;font-size: small;">
+									<!-- ngRepeat: roles in RoleList --><li ng-repeat="roles in RoleList" id="ACHAdminApprover" class="ng-scope listSelected" style="pointer-events: none;">
+										<a href="javascript:void(0);" style="color:#555;" ng-click="switchRole(roles.actualvalue, $index,$event)" class="ng-binding">
+											AdminApprover(ACH_AdminApprover) 
+										</a>
+									</li><!-- end ngRepeat: roles in RoleList -->
+								</div>						
+							</ul>
+						</li><!-- end ngIf: RoleList.length -->
+                        <li>
+						<a href="javascript:void(0);" ng-click="logout()" class="ng-binding">&nbsp;
+							<i class="fa fa-lock" aria-hidden="true"></i> Cerrar sesión
+						</a>
+                    </li>
+					</div>
+				</div>		  
+			</ul>
+            <!-- <li class="dropdown login headDropdownList"></li>-->
+        </ul>
+    </div>
+	<div id="carouselExampleControls" class="carousel slide col-md-12">
+		<div class="carousel-inner">
+			<div class="carousel-item active ng-binding">
+				MENSAJE OK
+			</div>
+			<!-- ngRepeat: Data in carouselData --><!-- ngIf: !$first --><!-- end ngRepeat: Data in carouselData -->
+		</div>
+		<!-- If you add ng-non-bindable will generate that this buttons make you comback to the home page. -->
+		<div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="carousel-control-prev item text-center ng-isolate-scope" ng-transclude="" href="#carouselExampleControls" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon ng-scope" aria-hidden="true"></span>
+			<span class="sr-only ng-scope">Previous</span>
+		</div>
+		<div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="carousel-control-next item text-center ng-isolate-scope" ng-transclude="" href="#carouselExampleControls" role="button" data-slide="next">
+			<span class="carousel-control-next-icon ng-scope" aria-hidden="true"></span>
+			<span class="sr-only ng-scope">Next</span>
+		</div>
+	</div>
+    <!--  </div> -->
+</div>
+
+<script class="ng-scope">
+    $(document).ready(function() {
+        $(function() {
+            $('.scrollDiv').slimScroll({
+                color: '#ddd',
+                size: '7px',
+                height: '280px',
+                alwaysVisible: true
+            });
+            $('.scrollUser2').slimScroll({
+                color: '#ddd',
+                size: '7px',
+                height: '',
+                alwaysVisible: true
+            });
+        });
+    });
+
+    /*if (document.documentElement.clientWidth < 767 && document.documentElement.clientWidth >= 360) {
+    	  $(".dropdownPosition1").css("left","-75px");
+    	  $(".dropdownPosition2").css("left","-110px");
+    	  $(".dropdownPosition3").css("left","-145px");
+    	}
+    	else if(document.documentElement.clientWidth < 360){
+    	  $(".dropdownPosition1").css("left","-38px");
+    	  $(".dropdownPosition2").css("left","-88px");
+    	  $(".dropdownPosition3").css("left","-135px");
+    	}
+    	else if(document.documentElement.clientWidth > 767 && document.documentElement.clientWidth <= 1200){
+    	  $(".dropdownPosition1").css("left","-140px");
+    	  $(".dropdownPosition2").css("left","-125px");
+    	  $(".dropdownPosition3").css("left","-150px");
+    	}*/
+</script>
+</div>
+        </div>
+    </div>
+</div>
+<br class="ng-scope"><br class="ng-scope">
+<br class="ng-scope">
+<div class="ng-scope">
+    <div class="modal fade modalIndex" tabindex="-1" id="idletimeout_model" role="dialog">
+        <div class="modal-dialog modal-lg modalIdle">
+        <div class="modal-content width50">
+            <div class="modal-header modal-header-warning">
+                <h4 class="modal-title">You're Idle. Do Something!</h4>
+            </div>
+        
+            <div class="modal-body ng-isolate-scope" idle-countdown="countdown">
+                You'll be redirect to previous page <span class="badge badge-warning ng-binding">10</span> second(s).
+                <div class="progress progress-striped mTopdisp">
+                    <div class="progress-bar progress-bar-warning" ng-style="{width: countdown*20+'%'}" style="width: 600%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>     
+</div>
+<!-- Forced rejection message -->
+<div class="modal fade ng-scope" tabindex="-1" id="alertBox" role="dialog">
+    <div class="modal-dialog modal-md modalTop">
+        <div class="modal-content modalbdy animated tada" style="margin:auto">
+            <div class="modal-header modalDisp">
+                <div class="iconBox"><i class="exclaLine"></i><i class="exclaDot"></i></div>
+            </div>
+            <div class="modal-body modalDisp">
+                <h1 translate="" class="ng-scope">Advertencia</h1>
+                <h4 translate="" class="ng-scope">¿Está seguro de rechazar este archivo?</h4>
+            </div>
+            <div class="modal-footer modalftr">
+                <button tabindex="0" type="button" class="buton cancl ng-scope" data-dismiss="modal" translate="">No</button>
+                <button tabindex="0" type="button" class="buton yess ng-scope" data-dismiss="modal" ng-click="forceAction(filedetail,newButtonsBkp)" translate="">Si</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contentContainer ng-scope">
+    <!-- ngRepeat: alert in alerts -->
+
+    <div id="ViewFXDetails" class="modal fade show" role="dialog" tabindex="-1" data-backdrop="static" aria-modal="true" style="padding-right: 17px; display: block;">
+        <div class="modal-dialog" style="width:40%">
+            <div class="modal-content">
+                <div class="modal-header modalHeaderColor">
+                    <h4 class="modal-title ng-scope" translate="">Aceptar Archivo</h4>
+                    <button type="button" class="close" data-dismiss="modal" ng-click="Reset()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form class="form-horizontal portlet-inner-box ng-pristine ng-valid" role="form" ng-submit="Userdetails(createData)">
+                                    <div class="row">
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label class="control-label bold col-md-3 col-sm-4 ng-scope" name="UserID" translate="">Usuario</label>
+                                            <div class="col-md-12 col-sm-8 ">
+                                                <input type="text" placeholder="Ingresar Usuario" name="UserID" ng-model="createData.userName" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label class="control-label bold col-md-3 col-sm-4 ng-scope" name="UserID" translate="">Contraseña</label>
+                                            <div class="col-md-12 col-sm-8 ">
+                                                <input type="password" placeholder="Ingrese contraseña" name="UserID" ng-model="createData.password" class="form-control ng-pristine ng-untouched ng-valid ng-empty">
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group" style="text-align:center;">
+                                        <button type="reset" class="btnDeny btn-success btnStyle ng-scope" data-dismiss="modal" ng-click="submitted=false;Reset()" style="margin-left:10px" translate="">Cancelar</button>
+                                        <button style="margin-left: 5px;" type="submit" class="btnSuccess btnStyle ng-scope" translate="">Aceptar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="alertWidthonResize customPanel" ng-style="{'border-bottom':'1px solid '+selectedClr.ColourA}" style="border-bottom: 1px solid rgb(0, 146, 69);">
+        <div class="panel-heading fileListStyle" style="padding: 10px 15px; color: rgb(0, 146, 69); opacity: 1;" ng-click="isCollapsed = !isCollapsed" ng-style="{'color':selectedClr.ColourA,'opacity':selectedClr.Opacity}">
+            <div>
+                <span class="bold insIdDisp ng-binding" data-ng-click="clickRefId(filedetail.InstructionID)" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="ID Instrucción">233960</span>
+
+                <!-- ngIf: filedetail.TransportName --><span class="transpnameDisp ng-binding ng-scope" data-toggle-second="tooltip" data-placement="top" title="" ng-if="filedetail.TransportName" data-original-title="Nombre Archivo">0001002.007.1 </span><!-- end ngIf: filedetail.TransportName -->
+                <div class="float-right">
+                    &nbsp;&nbsp;&nbsp;<i class="float-right bold fa fa-angle-right iconAngle fa-angle-down" ng-class="{'fa-angle-down': !isCollapsed, 'fa-angle-right': isCollapsed}"></i>
+                </div>
+
+                <div class="float-right bold">
+                    <!-- ngRepeat: FCW in currencyWiseSum -->
+                    <span class="caption-subject bold ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Estado">
+                        <i ng-class="{'fa fa-copy': filedetail.FileStatus == 'DUPLICATE','fa fa-check-circle-o': filedetail.FileStatus == 'DEBULKED','fa fa-times-circle':filedetail.FileStatus == 'REJECTED','fa fa-hand-paper-o':filedetail.FileStatus == 'HOLD','fa fa-exclamation-circle':filedetail.FileStatus != 'DEBULKED' &amp;&amp; filedetail.FileStatus != 'REJECTED' &amp;&amp; filedetail.FileStatus != 'DUPLICATE' &amp;&amp; filedetail.FileStatus != 'HOLD','fa fa-question-circle':filedetail.FileStatus == 'WAREHOUSED'}" class="fa fa-exclamation-circle"></i>
+                        WAITING_FILEAPPROVAL
+                    </span>
+                </div>
+
+                <div class="clearBoth"></div>
+            </div>
+        </div>
+        <!-- collapse="isCollapsed" -->
+        <div class="card-body collapse show ng-binding" id="collapsefiledetls" ng-init="isCollapsed_TransInfo = false">
+
+            <i ng-show="filedetail.TransportInfo" class="fa fa-plus-circle cursorPointer" ng-class="{'fa fa-minus-circle': isCollapsed_TransInfo, 'fa fa-plus-circle': !isCollapsed_TransInfo}" ng-click="isCollapsed_TransInfo = !isCollapsed_TransInfo" data-toggle="collapse" data-target="#isCollapsed"></i>            <span translate="" class="ng-scope">Fecha</span>:
+            <!--{{ d = (filedetail.EntryDate | date:'yyyy-MM-dd | HH:mm:ss (Z)').split(''); d.splice(-3, 0, ':'); d.join('') }}-->
+            2024-06-14 | 17:09:44.486
+
+            <!-- ngIf: filedetail['Total Number of Payments'] --><div class="float-right ng-scope" ng-if="filedetail['Total Number of Payments']"><span translate="" class="ng-scope">Estado de Transacciones</span> <span class="bold ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Total Pagos">(5)</span> :
+                <span class="badge badge-success badge-roundless minwidth40 ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Procesadas">4</span>
+                <span class="badge badge-danger badge-roundless minwidth40 ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Rechazadas">1</span>
+                <span class="badge badge-warning badge-roundless minwidth40 ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Pendientes">0</span>
+                <span class="badge badge-total-payment badge-roundless minwidth40 ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="En espera">0</span>
+            </div><!-- end ngIf: filedetail['Total Number of Payments'] -->
+
+            <!-- ngIf: !filedetail['Total Number of Payments'] -->
+
+            <!-- ngIf: filedetail['BatchesReceived'] --><div class="float-right batchStatus ng-scope" ng-if="filedetail['BatchesReceived']"><span translate="" class="ng-scope"> Estado del Lote</span>
+                <span class="bold ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Total Lotes">(5)</span> :
+                <span class="badge badge-success badge-roundless minwidth40 ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Batches Completed"></span>
+                <span class="badge badge-danger badge-roundless minwidth40 ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Batches Rejected"></span>
+                <span class="badge badge-warning badge-roundless minwidth40 ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Batches Pending"></span>
+                <span class="badge badge-total-payment badge-roundless minwidth40 ng-binding" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Lotes en Espera">0</span>
+            </div><!-- end ngIf: filedetail['BatchesReceived'] -->
+
+            <!-- ngIf: !filedetail['BatchesReceived'] -->
+            <!-- collapse="!isCollapsed_TransInfo" -->
+            <div class="collapse" id="isCollapsed">
+                <div class="col-md-12 transpInfoDisp">
+                    <pre ng-class="{'pre_primary_color': filedetail.FileStatus == 'DUPLICATE','pre_success_color': filedetail.FileStatus == 'DEBULKED','pre_dancer_color':filedetail.FileStatus == 'REJECTED','pre_waring_color':filedetail.FileStatus != 'DEBULKED' &amp;&amp; filedetail.FileStatus != 'REJECT' &amp;&amp; filedetail.FileStatus != 'DUPLICATE','panel panel-default':filedetail.FileStatus == 'Warehoused'}" class="ng-binding pre_waring_color">{
+    "TransportType":"UPLOAD",
+    "TransportName":"0001002.007.1",
+    "TransportArrivalTime":"2024-06-14T22:09:44.486",
+    "AddtionalProperty":[
+        {
+            "key":"UserID",
+            "value":"useradminapp@gmail.com"
+        },
+        {
+            "key":"Source-Indicator",
+            "value":"volpay-ui"
+        },
+        {
+            "key":"InputReferenceCode",
+            "value":"BANPOPULAR_SETTLEMENT_NACHAM_UI"
+        }
+    ]
+}</pre>
+                </div>
+            </div>
+            <br>
+            <hr class="hrAlign">
+
+            <div class="row">
+                <div class="col-md-12 fileLineHgt">
+                    <span class="caption-helper ng-binding"><span class="bold"><span translate="" class="ng-scope">Código de Oficina</span> : </span> GLBLOFF &nbsp;&nbsp; | &nbsp;&nbsp;
+                    <span class="bold"><span translate="" class="ng-scope">Código de Sucursal</span> : </span> COLBR&nbsp;&nbsp; | &nbsp;&nbsp;
+                    <span class="bold"><span translate="" class="ng-scope">ID Instrucción</span>: </span>233960
+                    <div class="dwnBtn float-right">
+                        <!-- ngIf: newPermission.ExportRecord --><button ng-if="newPermission.ExportRecord" class="btn-trans downloadBtn ng-scope" type="button" data-toggle="dropdown" ng-click="setHeight($event)" data-toggle-second="tooltip" data-placement="top" data-original-title="Exportar"> <i class="fa fa-download" aria-hidden="true"></i></button><!-- end ngIf: newPermission.ExportRecord -->
+                        <a id="dwnldLnk" style="display:none;"></a>
+                        <ul class="download-window dropdown-menu dropdown-menu-excel float-right dropdown-menu-right dwnIndex">
+                            <li>
+                                <span style="word-break: break-all;text-align: initial;" class="ng-binding"><input type="radio" name="excelVal" value="txt" class="radiobtns radioBtnAlighn">Exportar TXT</span>
+                                <span style="word-break: break-all;text-align: initial;" class="ng-binding"><input type="radio" name="excelVal" value="csv" class="radiobtns radioBtnAlighn">Exportar CSV</span>
+                            </li>
+
+                            <li data-toggle-second="tooltip" data-placement="top" data-original-title="Descargar" class="excelprint excelIcon" ng-click="exportToExcelFlist($event)"><i class="fa fa-file-excel-o fa-fs14" aria-hidden="true"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearBoth"></div>
+                    <hr class="hrInsId">
+                </span></div>
+                <hr class="hrAlign">
+                <div class="row col-md-12 pl-2">
+                    <div class="colStyle pl-0 col-md-3 ng-binding">
+					<span class="bold ng-scope" translate="">Archivo</span><br>
+                    <span translate="" class="bold ng-scope">Entidad:</span> BANPOPULAR <br>
+                    <span translate="" class="bold ng-scope">Nombre:</span> 0001002.007.1<br>
+                    <span translate="" class="bold ng-scope">Contrato: </span> BANPOPULAR_SETTLEMENT_NACHAM_UI<br>
+                    <span translate="" class="bold ng-scope">Tipo Instrucción : </span> Payment Instruction<br>
+                    <span translate="" class="bold ng-scope">Estado : </span> WAITING_FILEAPPROVAL<br>
+                </div>
+                <!-- ngIf: filedetail_.InstructionFormat != 'PA' && filedetail_.InstructionFormat != 'ADF' && filedetail_.InstructionFormat != 'TrxCleared' --><div class="col-md-3 colStyle ng-binding ng-scope" ng-if="filedetail_.InstructionFormat != 'PA' &amp;&amp; filedetail_.InstructionFormat != 'ADF' &amp;&amp; filedetail_.InstructionFormat != 'TrxCleared'">
+					<span class="bold ng-scope" translate="">Transacciones</span><br>
+                    <span translate="" class="bold ng-scope">Total: </span> 5<br>
+                    <span translate="" class="bold ng-scope">Completadas: </span> 4
+                    <br>
+                    <span translate="" class="bold ng-scope">Rechazadas: </span> 1
+                    <br>
+                    <span translate="" class="bold ng-scope">Pendientes: </span> 0<br>
+					<hr class="hrInsId">
+					<span class="bold ng-scope" translate="">Lotes</span><br>
+                    <!-- ngIf: filedetail.BatchesReceived --><span ng-if="filedetail.BatchesReceived" class="ng-binding ng-scope"><span translate="" class="bold ng-scope">Total: </span> 5</span><!-- end ngIf: filedetail.BatchesReceived --><br>
+                    <!-- ngIf: filedetail.BatchesCompleted --><br>
+                    <!-- ngIf: filedetail.BatchesRejected --><br>
+                    <!-- ngIf: filedetail.BatchesPending --><br>
+                </div><!-- end ngIf: filedetail_.InstructionFormat != 'PA' && filedetail_.InstructionFormat != 'ADF' && filedetail_.InstructionFormat != 'TrxCleared' -->
+                <!--<div class="col-md-3 colStyle" visible="false">
+                    <span translate class="bold">FileDetail.TotalNumberofBatches</span> {{filedetail.BatchesReceived}}abc<br>
+                    <span translate class="bold">FileDetail.TotalNumberofCompletedBatches</span> {{filedetail.BatchesCompleted}}<br>
+                    <span translate class="bold">FileDetail.TotalNumberofRejectedBatches</span> {{filedetail.BatchesRejected}}<br>
+                    <span translate class="bold">FileDetail.TotalNumberofPendingBatches</span> {{filedetail.BatchesPending}}<br>
+                </div>-->
+            
+                <!-- ngIf: filedetail_.InstructionFormat != 'PA' && filedetail_.InstructionFormat != 'ADF' && filedetail_.InstructionFormat != 'TrxCleared' --><div class="col-md-3 lineHeight35 ng-binding ng-scope" ng-if="filedetail_.InstructionFormat != 'PA' &amp;&amp; filedetail_.InstructionFormat != 'ADF' &amp;&amp; filedetail_.InstructionFormat != 'TrxCleared'">
+					<span class="bold ng-scope" translate="">Créditos</span><br>
+					<hr class="hrInsId">
+                    <span translate="" class="bold ng-scope">Valor Original:</span>  $ 0.00<br>
+                    <span translate="" class="bold ng-scope">Requieren Autorización:</span>  $ 0.00<br>
+                    <span translate="" class="bold ng-scope">No requieren Autorización:</span>  $ 0.00<br>
+                    <span translate="" class="bold ng-scope">Valor Autorizado:</span>  0.00<br>
+                    <span translate="" class="bold ng-scope">Valor Procesado:</span> $  0.00<br> 
+                </div><!-- end ngIf: filedetail_.InstructionFormat != 'PA' && filedetail_.InstructionFormat != 'ADF' && filedetail_.InstructionFormat != 'TrxCleared' -->
+				
+                <!-- ngIf: filedetail_.InstructionFormat != 'PA' && filedetail_.InstructionFormat != 'ADF' && filedetail_.InstructionFormat != 'TrxCleared' --><div class="col-md-3 lineHeight35 ng-binding ng-scope" ng-if="filedetail_.InstructionFormat != 'PA' &amp;&amp; filedetail_.InstructionFormat != 'ADF' &amp;&amp; filedetail_.InstructionFormat != 'TrxCleared'">
+					<span class="bold ng-scope" translate="">Débitos</span><br>
+					<hr class="hrInsId">
+                    <span translate="" class="bold ng-scope">Valor Original:</span> $  120,130.02<br>
+                    <span translate="" class="bold ng-scope">Requieren Autorización:</span>  $  0.00<br>
+                    <span translate="" class="bold ng-scope">No requieren Autorización:</span>  $  117,502.29<br>
+                    <span translate="" class="bold ng-scope">Valor Autorizado:</span>  $  0.00<br>
+                    <span translate="" class="bold ng-scope">Valor Procesado:</span>  $  0.00<br>
+                </div><!-- end ngIf: filedetail_.InstructionFormat != 'PA' && filedetail_.InstructionFormat != 'ADF' && filedetail_.InstructionFormat != 'TrxCleared' -->
+                <!-- ngIf: filedetail_.InstructionFormat == 'PA' -->
+                <!-- ngIf: filedetail_.InstructionFormat == 'ADF' -->
+
+                <!-- ngIf: filedetail_.InstructionFormat == 'TrxCleared' -->
+
+	            <div class="col-md-12" style="margin-top:6px">
+	                <span class="bold ng-scope" translate="">Descripción del Estado</span>:
+	                <pre class="ng-binding">Status changed to WAITING_FILEAPPROVAL
+</pre>
+				</div>
+
+                <!-- ngIf: false -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <div id="addnotes" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			
+			<div class="modal-content">
+				<div class="modal-header modalHeaderColor">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title"  translate>ApprovalDts.Notes </h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" ng-submit="addNotes(data,refId)">
+
+						<div class="form-group">
+							<label class="control-label col-sm-3"  translate>ApprovalDts.Notes  <span class="asterisk" aria-required="true">*</span></label>
+							<div class="col-sm-9">
+								<textarea class="form-control" placeholder="Please enter notes" ng-model="data.notes" style="height:6.25rem;" required maxlength="200" ng-trim="true" ng-blur="multipleEmptySpace($event)"></textarea><span>{{200 - data.notes.length}} Characters left</span>
+							</div>
+						</div>
+						<div style="text-align:center;">
+							<button type="submit" class="btn btnStyle" translate>BtnGroup.Submit</button>
+							<button type="button" class="btn btnStyle" data-dismiss="modal" translate >BtnGroup.Cancel</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+    <!-- Instruction Information -->
+    <!-- ngIf: false -->
+
+    <!-- Instruction Details -->
+    <div class="customPanel accordion" ng-style="{'border-bottom':'0.063rem solid '+selectedClr.ColourA}" id="collapsePaymentDetails" style="border-bottom: 0.063rem solid rgb(0, 146, 69);">
+        <div class="card-header fileListStyle filedtlsDisp" ng-click="isPaymentCollapsed = !isPaymentCollapsed" ng-style="{'color':selectedClr.ColourA,'opacity':selectedClr.Opacity}" data-toggle="collapse" data-target="#collapsePaymentDetls" aria-expanded="true" aria-controls="collapsePaymentDetls" style="color: rgb(0, 146, 69); opacity: 1;">
+            <span class="bold ng-scope" translate="">Detalle</span>
+
+            <div class="float-right">
+                &nbsp;&nbsp;&nbsp;<i class="float-right bold fa fa-angle-right iconAngle fa-angle-down" ng-class="{'fa-angle-down': !isPaymentCollapsed, 'fa-angle-right': isPaymentCollapsed}"></i>
+            </div>
+        </div>
+        <!-- collapse="isPaymentCollapsed" -->
+        <div class="card-body collapse show p-0" id="collapsePaymentDetls" data-parent="#collapsePaymentDetails">
+            <!-- style="margin: 0.938rem !important;" -->
+            <div class="tabbable-custom p-3">
+            
+                <ul class="nav nav-tabs navDisp">
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" id="#tab__9" index="" class="nav-link active" data-target="#tab__9" data-toggle="tab" aria-expanded="true">
+                            <b><i class="fa fa-file-text-o" aria-hidden="true"></i><span translate="" class="ng-scope">Precauciones</span> </b></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" id="#tab__10" class="nav-link" data-target="#tab__10" ng-click="toAllPaymentsRejected()" data-toggle="tab" aria-expanded="false">
+                            <b><i class="fa fa-file-text-o" aria-hidden="true"></i><span translate="" class="ng-scope">Transacciones Rechazadas</span></b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" id="#tab__8" class="nav-link" data-target="#tab__8" ng-click="toAllPaymentsCompleted()" data-toggle="tab" aria-expanded="false">
+                            <b> <i class="fa fa-money" aria-hidden="true"></i> <span translate="" class="ng-scope">Transacciones Cargadas</span></b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" id="#tab__2" class="nav-link targetcls02" data-target="#tab__2" data-toggle="tab" aria-expanded="false">
+                            <b><i class="fa fa-file-text-o" aria-hidden="true"></i> <span translate="" class="ng-scope"> Log de Instrucciones</span></b></a>
+                    </li>
+                    <!--
+                    <li class="active">
+                        <a href="javascript:void(0);" _index={{$index}} data-target="#tab_{{$index}}_9" data-toggle="tab" aria-expanded="true">
+                            <b> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Warning Information</b></a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="javascript:void(0);" data-target="#tab_{{$index}}_3" data-toggle="tab" aria-expanded="false">
+                            <i class="fa fa-asterisk"></i> <b>System Interactionana</b></a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:void(0);" data-target="#tab_{{$index}}_4" data-toggle="tab" aria-expanded="false">
+                        
+                            <b>Account Postings</b></a>
+                    </li>
+
+                    <li class="">
+                        <a href="javascript:void(0);" data-target="#tab_{{$index}}_5" data-toggle="tab" aria-expanded="false">
+                            <i class="fa fa-send-o"></i> <b>External Communications</b></a>
+                    </li>
+                    -->
+                    <!-- <li class="">
+                        <a href="javascript:void(0);" data-target="#tab_{{$index}}_6" data-toggle="tab" aria-expanded="false">
+                            <i class="fa fa-exchange"></i> <b>Issue Information</b></a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:void(0);" data-target="#tab_{{$index}}_7" data-toggle="tab" aria-expanded="false">
+                            <i class="fa fa-exchange"></i> 
+                            <b>Input Batch Information</b></a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:void(0);" data-target="#tab_{{$index}}_8" data-toggle="tab" aria-expanded="false">
+                            <i class="fa fa-exchange"></i> 
+                            <b>Processing Batch Information</b></a>
+                    </li> -->
+
+                    <div class="col pr-0">
+                        <!-- ngIf: newPermission.Accept --><button ng-if="newPermission.Accept" class="btnSuccess btn-sm float-right ng-binding ng-scope" ng-show="(filedetailpcd.length&amp;&amp;forbutton.length &amp;&amp; filedetail.FileStatus != 'IN_PROGRESS')" style="margin-top:5px;display:inline-block;margin-right:6px;" ng-click="forceActionpopup('waitforapproval')" ng-class="{'disableButton': (filedetail.FileStatus == 'DEBULKED' || filedetail.FileStatus  == 'COMPLETED' || filedetail.FileStatus  == 'DELETED')}" ng-disabled="filedetail.FileStatus == 'DEBULKED' || filedetail.FileStatus  == 'COMPLETED' || filedetail.FileStatus  == 'DELETED'">
+                            Aceptar</button><!-- end ngIf: newPermission.Accept -->
+                        <!-- ngIf: newPermission.Accept --><button ng-if="newPermission.Accept" class="btnDeny btn-sm float-right ng-binding ng-scope" ng-show="(filedetailpcd.length&amp;&amp;forbutton.length &amp;&amp; filedetail.FileStatus != 'IN_PROGRESS')" style="margin-top:5px;display:inline-block;margin-right:6px;" ng-click="forceActionpopup('rejected')" ng-class="{'disableButton': (filedetail.FileStatus == 'DEBULKED' || filedetail.FileStatus  == 'COMPLETED' || filedetail.FileStatus  == 'DELETED')}" ng-disabled="filedetail.FileStatus == 'DEBULKED' || filedetail.FileStatus  == 'COMPLETED' || filedetail.FileStatus  == 'DELETED'">
+                                Cancelar</button><!-- end ngIf: newPermission.Accept -->
+
+                        <!-- ngIf: flase -->
+                        <!-- ngIf: !isTabClicked --><div class="float-right btnAlign ng-scope" ng-if="!isTabClicked" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Exportar a Excel">
+                            <!-- ngIf: newPermission.ExportDetail --><button ng-if="newPermission.ExportDetail" class="btnSuccessColor btn-sm exportDisable ng-scope" ng-click="tablesToExcel(['tab9'], ['Warning Information'], 'TestBook.xls', 'Excel');ExportForIE()"><i class="fa fa-file-excel-o"></i>
+                            </button><!-- end ngIf: newPermission.ExportDetail -->
+                        </div><!-- end ngIf: !isTabClicked -->
+                            <!-- ngIf: isTabClicked -->
+                        <div class="float-right btnAlign" data-toggle-second="tooltip" data-placement="top" title="" data-original-title="Actualizar"><button class="btnSuccessColor btn-sm" id="restoreFileData" ng-click="selfCalling()" style="pointer-events: auto;"><i class="fa fa-refresh"></i></button>
+                        </div>
+
+
+                        <!-- <button class="btn btn-sm" data-toggle="modal" data-target="#addnotes" ng-click="data.notes = ' '" style="float:right;margin-top:0.313rem;margin-right:0.5%;">Add Notes</button> -->
+
+                        <!-- <div ng-if="((filedetail.FileStatus == 'DUPLICATE ')||(filedetail.FileStatus == 'Duplicate ')|| (filedetail.FileStatus == 'HOLD ')|| (filedetail.FileStatus == 'Hold '))" class="pull-right" style="margin-top:0.313rem;margin-right: 0.5%">
+                            <button class="btn btn-sm" ng-click="fileStatus('ACCEPTED ')">Accept</button>
+                            <button class="btn btn-sm" ng-click="fileStatus('REJECTED ')">Reject</button>
+                        </div> -->
+                        <div class="float-right btnAlign">
+                            <!-- ngRepeat: newbuttons in nActionBtns -->
+                            <!-- ngRepeat: newbuttons in nActionBtns -->
+                            <!-- ngRepeat: newbuttons in nActionBtns -->
+                        </div>
+                    </div>
+                </ul>
+                
+                <div class="tab-content" id="tableExport">
+                    <div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__1">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>Warning Information</th>
+                            </tr></tbody></table>
+                        </span>
+                        <!-- ngIf: !attachDetails && !confirmationDetails && instructionTypeValue != 'statement' --><table ng-if="!attachDetails &amp;&amp; !confirmationDetails &amp;&amp; instructionTypeValue != 'statement'" class="table table-striped table-bordered table-hover ng-scope" id="tab1">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Payment ID
+                                    </th>
+                                    <th>
+                                        Batch ID
+                                    </th>
+                                    <th>
+                                        Original Payment Reference
+                                    </th>
+                                    <th>
+                                        Value Date
+                                    </th>
+                                    <th>
+                                        Cycle
+                                    </th>
+                                    <!--<th>
+                                        Currency
+                                    </th>-->
+                                    <th>
+                                        Payment Amount
+                                    </th>
+                                    <th>
+                                        Transaction Status
+                                    </th>
+                                    <th>
+                                        Approve
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ngRepeat: payments in filedetailpcdWAITING -->
+                            </tbody>
+                        </table><!-- end ngIf: !attachDetails && !confirmationDetails && instructionTypeValue != 'statement' -->
+                        
+					</div>
+
+                    <div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__8">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>Transaction Information</th>
+                            </tr></tbody></table>
+                        </span>
+                        <!--<table ng-if="!attachDetails && !confirmationDetails && instructionTypeValue != 'statement'" class="table table-striped table-bordered table-hover" id="tab8">-->
+                        <!-- ngIf: false -->
+                        <!--
+						<table ng-if="confirmationDetails && !attachDetails && instructionTypeValue != 'statement'" class="table table-striped table-bordered table-hover" id="tab1">
+                            <thead>
+                                <tr>
+                                    <th>CCD ID</th>
+                                    <th>Distribution ID </th>
+                                    <th>Confirmation Status Code </th>
+                                    <th>Confirmation Match Status </th>
+                                    <th>Confirmation Processing Status </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="instructions in confirmation" style="cursor:pointer" ng-click="clickID({'data':instructions,'fromPage':'AllConfirmations'})">
+
+                                    <td>
+                                        <span class="caption-subject bold uppercase">{{instructions.CCDID}}</span>
+                                    </td>
+                                    <td>
+                                        {{instructions.PaymentID}}
+                                    </td>
+                                    <td>
+                                        {{instructions.ConfStatusCode}}
+                                    </td>
+                                    <td>
+
+                                        {{instructions.ConfMessageMatchStatus}}
+                                    </td>
+                                    <td>
+                                        {{instructions.ConfProcessingStatus}}
+
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table ng-if="attachDetails && !confirmationDetails && instructionTypeValue != 'statement'" class="table table-striped table-bordered table-hover" id="tab1">
+                            <thead>
+                                <tr>
+                                    <th>Attach Msg ID</th>
+                                    <th>Original Attach Msg Reference</th>
+                                    <th>MOP</th>
+                                    <th>Attach Msg Function </th>
+                                    <th>Parent ID </th>
+                                    <th>Root Payment ID </th>
+                                    <th>Attach Msg Status </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="instruction in attachMessage">
+
+                                    <td>
+                                        <span class="caption-subject bold uppercase">{{instruction.AttchMsgID}}</span>
+                                    </td>
+                                    <td>
+                                        {{instruction.OrigAttchMsgRef}}
+                                    </td>
+                                    <td>
+                                        {{instruction.MOP}}
+                                    </td>
+                                    <td>
+
+                                        {{instruction.AttchMsgFunc}}
+                                    </td>
+
+                                    <td><span ng-if="instruction.ParentID" class="cursorPointer1" ng-click="clickAttachD({'data':instruction,'fromPage':'filedetail'})" style="color:#337ab7;cursor: pointer;">
+                                            {{instruction.ParentID}}
+                                        </span>
+                                    </td>
+
+
+                                    <td><span ng-if="instruction.RootPaymentID" class="cursorPointer1" ng-click=" clickMessageID({'data':instruction,'fromPage':'filedetail'})" style="color:#337ab7;cursor: pointer;">
+                                            {{instruction.RootPaymentID}}
+                                        </span>
+                                    </td>
+
+
+                                    <td>
+                                        {{instruction.AttchMsgStatus}}
+
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    	<-->
+					</div>
+
+                    <div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__2">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>Instruction Log</th>
+                            </tr></tbody></table>
+                        </span>
+                        <table class="table table-striped table-bordered table-hover" id="tab2">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span translate="" class="ng-scope">Fecha</span>
+                                    </th>
+                                    <th>
+                                        <span translate="" class="ng-scope">Evento</span>
+                                    </th>
+                                    <th>
+                                        <span translate="" class="ng-scope">Actor</span>
+                                    </th>
+                                    <th>
+                                        <span translate="" class="ng-scope">Descripción</span>
+                                    </th>
+                                    <th>
+                                        <span translate="" class="ng-scope">Referencia Externa</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ngRepeat: fa in filedetailaudit --><tr ng-repeat="fa in filedetailaudit" class="ng-scope">
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        2024-06-14 | 17:09:44.496
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <span ng-bind="underScoreReplace(fa.Event)" class="ng-binding">RECEIVE INSTRUCTION</span>
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        SYSTEM
+                                    </td>
+
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <p ng-bind-html="fa.Description|removeSlaceN|removeSlaceNN" style="background-color:transparent !important;border: 0px solid #ccc !important;padding: 0px !important;font-size:13px !important;font-family: 'Open Sans', sans-serif; margin-top:0px !important; margin-bottom:0px !important;" class="ng-binding">Instruction received from the file - 0001002.007.1</p>
+                                    </td>
+                                    <td style="text-align:center;max-width: 300px;  word-wrap: break-word;">
+                                    </td>
+
+                                </tr><!-- end ngRepeat: fa in filedetailaudit --><tr ng-repeat="fa in filedetailaudit" class="ng-scope">
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        2024-06-14 | 17:09:44.498
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <span ng-bind="underScoreReplace(fa.Event)" class="ng-binding">RECEIVE INSTRUCTION</span>
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        SYSTEM
+                                    </td>
+
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <p ng-bind-html="fa.Description|removeSlaceN|removeSlaceNN" style="background-color:transparent !important;border: 0px solid #ccc !important;padding: 0px !important;font-size:13px !important;font-family: 'Open Sans', sans-serif; margin-top:0px !important; margin-bottom:0px !important;" class="ng-binding">Message Received in host f91a5d18e5c8 . Assigned InstructionID 233960.</p>
+                                    </td>
+                                    <td style="text-align:center;max-width: 300px;  word-wrap: break-word;">
+                                    </td>
+
+                                </tr><!-- end ngRepeat: fa in filedetailaudit --><tr ng-repeat="fa in filedetailaudit" class="ng-scope">
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        2024-06-14 | 17:09:44.561
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <span ng-bind="underScoreReplace(fa.Event)" class="ng-binding">RECEIVE INSTRUCTION</span>
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        useradminapp@gmail.com
+                                    </td>
+
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <p ng-bind-html="fa.Description|removeSlaceN|removeSlaceNN" style="background-color:transparent !important;border: 0px solid #ccc !important;padding: 0px !important;font-size:13px !important;font-family: 'Open Sans', sans-serif; margin-top:0px !important; margin-bottom:0px !important;" class="ng-binding">Instruction Uploaded via REST or UI By: useradminapp@gmail.com</p>
+                                    </td>
+                                    <td style="text-align:center;max-width: 300px;  word-wrap: break-word;">
+                                    </td>
+
+                                </tr><!-- end ngRepeat: fa in filedetailaudit --><tr ng-repeat="fa in filedetailaudit" class="ng-scope">
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        2024-06-14 | 17:09:44.569
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <span ng-bind="underScoreReplace(fa.Event)" class="ng-binding">VALIDATE DEBULK</span>
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        SYSTEM
+                                    </td>
+
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <p ng-bind-html="fa.Description|removeSlaceN|removeSlaceNN" style="background-color:transparent !important;border: 0px solid #ccc !important;padding: 0px !important;font-size:13px !important;font-family: 'Open Sans', sans-serif; margin-top:0px !important; margin-bottom:0px !important;" class="ng-binding">Validate and debulking process started</p>
+                                    </td>
+                                    <td style="text-align:center;max-width: 300px;  word-wrap: break-word;">
+                                    </td>
+
+                                </tr><!-- end ngRepeat: fa in filedetailaudit --><tr ng-repeat="fa in filedetailaudit" class="ng-scope">
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        2024-06-14 | 17:09:44.616
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <span ng-bind="underScoreReplace(fa.Event)" class="ng-binding">RECEIVE INSTRUCTION</span>
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        SYSTEM
+                                    </td>
+
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <p ng-bind-html="fa.Description|removeSlaceN|removeSlaceNN" style="background-color:transparent !important;border: 0px solid #ccc !important;padding: 0px !important;font-size:13px !important;font-family: 'Open Sans', sans-serif; margin-top:0px !important; margin-bottom:0px !important;" class="ng-binding">File structural validations done</p>
+                                    </td>
+                                    <td style="text-align:center;max-width: 300px;  word-wrap: break-word;">
+                                    </td>
+
+                                </tr><!-- end ngRepeat: fa in filedetailaudit --><tr ng-repeat="fa in filedetailaudit" class="ng-scope">
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        2024-06-14 | 17:09:44.674
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <span ng-bind="underScoreReplace(fa.Event)" class="ng-binding">RECEIVE INSTRUCTION</span>
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        SYSTEM
+                                    </td>
+
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <p ng-bind-html="fa.Description|removeSlaceN|removeSlaceNN" style="background-color:transparent !important;border: 0px solid #ccc !important;padding: 0px !important;font-size:13px !important;font-family: 'Open Sans', sans-serif; margin-top:0px !important; margin-bottom:0px !important;" class="ng-binding">IRD updated.</p>
+                                    </td>
+                                    <td style="text-align:center;max-width: 300px;  word-wrap: break-word;">
+                                    </td>
+
+                                </tr><!-- end ngRepeat: fa in filedetailaudit --><tr ng-repeat="fa in filedetailaudit" class="ng-scope">
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        2024-06-14 | 17:09:44.674
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <span ng-bind="underScoreReplace(fa.Event)" class="ng-binding">VALIDATE DEBULK</span>
+                                    </td>
+                                    <td style="max-width: 300px;  word-wrap: break-word;" class="ng-binding">
+                                        SYSTEM
+                                    </td>
+
+                                    <td style="max-width: 300px;  word-wrap: break-word;">
+                                        <p ng-bind-html="fa.Description|removeSlaceN|removeSlaceNN" style="background-color:transparent !important;border: 0px solid #ccc !important;padding: 0px !important;font-size:13px !important;font-family: 'Open Sans', sans-serif; margin-top:0px !important; margin-bottom:0px !important;" class="ng-binding">Validate and debulking process ended.</p>
+                                    </td>
+                                    <td style="text-align:center;max-width: 300px;  word-wrap: break-word;">
+                                    </td>
+
+                                </tr><!-- end ngRepeat: fa in filedetailaudit -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                <div class="tab-pane active table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__9">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>Warning Information</th>
+                            </tr></tbody></table>
+                        </span>
+                        <!-- ngIf: !attachDetails && !confirmationDetails && instructionTypeValue != 'statement' --><table ng-if="!attachDetails &amp;&amp; !confirmationDetails &amp;&amp; instructionTypeValue != 'statement'" class="table table-striped table-bordered table-hover ng-scope" id="tab9">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span translate="" class="ng-scope">ID Lote</span>
+                                    </th>
+                                    <th>
+                                        <span translate="" class="ng-scope">Referencia de Transacción Original</span>
+                                    </th>
+                                    <th>
+                                        <span translate="" class="ng-scope">Fecha</span>
+                                    </th>
+                                    <th>
+                                        <span translate="" class="ng-scope">Monto</span>
+                                    </th>
+                                    <th>
+                                        <span translate="" class="ng-scope">Estado de Transacciones</span>
+                                    </th>
+                                    <th>
+                                        <span translate="" class="ng-scope">Detalle</span>
+                                    </th>
+                                    <th>
+                                    
+                                        <span translate="" class="ng-scope">Seleccionar Todo</span>
+
+                                    <span style="margin-left: 13px;">
+                                        <input type="checkbox" name="action" ng-model="allpaymentss.Selected" class="checkBoxClass txtCenter selectall cursorPointer ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" uir="" ng-click="checkStatusForBulk1(filedetailpcdWaitforapp,payments,$index)">
+                                    </span>
+
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ngRepeat: payments in filedetailpcdWaitforapp -->
+                            </tbody>
+                        </table><!-- end ngIf: !attachDetails && !confirmationDetails && instructionTypeValue != 'statement' -->
+                        
+					</div>
+					
+                    <div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__10">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>REJECTED</th>
+                            </tr></tbody></table>
+                        </span>
+                        <!--
+                        <table ng-if="!attachDetails && !confirmationDetails && instructionTypeValue != 'statement'" class="table table-striped table-bordered table-hover" id="tab10">
+                        -->
+                        <!-- ngIf: false -->
+                        
+					</div>
+
+
+
+                    <div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__3">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>System Interaction</th>
+                            </tr></tbody></table>
+                        </span>
+                        <table class="table table-striped table-bordered table-hover" id="tab3">
+                            <thead>
+                                <tr>
+                                    <th>Instruction ID</th>
+                                    <th>Group Reference ID</th>
+                                    <th>Correlation ID</th>
+                                    <th>Relationship</th>
+                                    <th>Invocation Point</th>
+                                    <th>Is Synchronous</th>
+                                    <th>TimeStamp</th>
+                                    <th>Attempt</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ngRepeat: data in newdata -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__4">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>Account Postings</th>
+                            </tr></tbody></table>
+                        </span>
+                        <table class="table table-striped table-bordered table-hover" id="tab4">
+                            <thead>
+                                <tr>
+                                    <th>Bulk Posting Entry ID</th>
+                                    <th>Posting Entry ID</th>
+                                    <th>Account Category</th>
+                                    <th>Account ID</th>
+                                    <th>Account Currency</th>
+                                    <th>Account Type</th>
+                                    <th>Accounting System</th>
+                                    <th>Account Branch</th>
+                                    <th>Posting Entry Type</th>
+                                    <th>Amount</th>
+                                    <th>Debit/Credit</th>
+                                    <th>Posting Override (Y/N)</th>
+                                    <th>Narrative</th>
+                                    <th>Posting Date</th>
+                                    <th>Status Reason</th>
+                                    <th>Status</th>
+                                    <th>Statement Matching Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ngRepeat: data in accountInfdata -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__5">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>External Communications</th>
+                            </tr></tbody></table>
+                        </span>
+                        <table class="table table-striped table-bordered table-hover" id="tab5">
+                            <thead>
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Source/Destination</th>
+                                    <th>Transmission Mode</th>
+                                    <th>Message Type</th>
+                                    <th>Group Interaction Unique ID</th>
+                                    <!--<th>Message Interaction Unique ID</th>-->
+                                    <th>Direction</th>
+                                    <th>TimeStamp</th>
+                                    <!--<th>Transmission Method</th>-->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ngRepeat: data in externaldata -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__6">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>Issue Information</th>
+                            </tr></tbody></table>
+                        </span>
+                        <table class="table table-striped table-bordered table-hover" id="tab6">
+                            <thead>
+                                <tr>
+                                    <th>Instruction ID</th>
+                                    <th>Task Name</th>
+                                    <th>Incidence Code</th>
+                                    <th>Incidence Type</th>
+                                    <th>Incidence Origin</th>
+                                    <th>Incidence Resolution</th>
+                                    <th>Issue Timestamp</th>
+                                    <th>FieldName Values</th>
+                                    <th>Description</th>
+                                    <th>Original Description</th>
+                                    <th>Process Status</th>
+                                    <th>Severity</th>
+                                    <th>Is Handled</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ngRepeat: errorInfo in ErrorInfodata -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab__7">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <tbody><tr><th>Input Batch Information</th>
+                            </tr></tbody></table>
+                        </span>
+                        <table class="table table-striped table-bordered table-hover" id="tab7">
+                            <thead>
+                                <tr>
+                                    <th>Batch ID</th>
+                                    <th>Batch Type</th>
+                                    <th>Original Batch Reference</th>
+                                    <th>Instruction ID</th>
+                                    <th>Total Transactions</th>
+                                    <th>Transactions Completed</th>
+                                    <th>Transactions Pending</th>
+                                    <th>Rejected Transaction</th>
+                                    <th>Issue Time Stamp</th>
+                                    <th>Description</th>
+                                    <th>Batch Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ngRepeat: batchInfo in batchInfodata -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--
+						<div class="tab-pane table-responsive fileDetailOverflow FixHead dataGroupsScroll" id="tab_{{$index}}_8">
+                        <span class="tableHeading bold" style="display:none">
+                            <table>
+                                <th>Processing Batch Information</th>
+                            </table>
+                        </span>
+                        <table class="table table-striped table-bordered table-hover" id="tab8">
+                            <thead>
+                                <tr>
+                                    <th>Batch ID</th>
+                                    <th>Batch Type</th>
+                                    <th>Original Batch Reference</th>
+                                    <th>Instruction ID</th>
+                                    <th>Total Transactions</th>
+                                    <th>Transactions Completed</th>
+                                    <th>Transactions Pending</th>
+                                    <th>Rejected Transaction</th>
+                                    <th>Issue Time Stamp</th>
+                                    <th>Description</th>
+                                    <th>Batch Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="probatchInfo in processbatchInfodata" ng-click='clickReferenceBatchID({ "data": probatchInfo, "fromPage": "filedetail"})'>
+                                    <td>{{probatchInfo.BatchID}}</td>
+                                    <td>{{probatchInfo.BatchType}}</td>
+                                    <td>{{probatchInfo.OriginalBatchReferenceID}}</td>
+                                    <td>{{probatchInfo.InstructionID}}</td>
+                                    <td>{{probatchInfo.PaymentsReceived}}</td>
+                                    <td>{{probatchInfo.PaymentsCompleted}}</td>
+                                    <td>{{probatchInfo.PaymentsPending}}</td>
+                                    <td>{{probatchInfo.PaymentsRejected}}</td>
+								    <td>{{probatchInfo.EntryDate | dateFormat}}</td>
+                                    <td>{{probatchInfo.BatchStatusDetails}}</td>
+                                    <td>{{probatchInfo.BatchStatus}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+					-->
+                    <iframe id="txtArea1" style="display:none"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="actionForm" class="modal fade" role="dialog">
+    <div class="modal-dialog width80">
+        <div class="modal-content">
+            <div class="modal-header modalHeaderColor">
+                
+                <h5 class="modal-title ng-binding"> </h5>
+                <button type="button" class="close" ng-click="closeDialog()">×</button>
+            </div>
+            <div class="modal-body sectionPaddng">
+                <!-- ngRepeat: alert in alerts1 -->
+
+                <form class="form-horizontal ng-pristine ng-valid" name="interfaceForm" ng-submit="(!rfclicked)?actionWebformSubmit(fieldData):' '">
+                    <!--<div data-ng-include="'modules/filedetail/webform.html '">
+						
+					</div>	-->
+                    <div>
+                        <!-- ngRepeat: field in fieldDetails.section -->
+
+                        <!-- ngRepeat: Pgroup in fieldDetails.subSection -->
+                        <div class="clearfix"></div>
+                        <div class="col-md-12">
+                            <div class="panel-footer actionWebForm actionFtr">
+                                <button type="reset" class="btn btn-success btnStyle pull-right btnCancel ng-scope" ng-click="submitted=false;closeDialog();" translate="">Cancelar</button>
+                                <button type="submit" class="btn btn-success btnStyle pull-right ng-scope" ng-click="(!rfclicked)?submitted=true:' '" ng-disabled="rfclicked" translate="">Guardar</button>
+                                <div class="clearBoth"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(function() {
+                $('[data-toggle-second=tooltip]').tooltip({ trigger: "hover" });
+            }, 1000)
+</script>
+</div></div>
+    </div>
+
+    <!-- ngIf: !iframeFlag --><!-- ngInclude: footerPath --><div ng-include="footerPath" data-ng-controller="footerCtrl" class="main-footer newvisiblefooter ng-scope" ng-if="!iframeFlag" ng-style="(currThemeVal == 'bnym' || userPWReset == 'NotSet') ? {'margin-left': '0'}  : {'margin-left': '230px'}" style="margin-left: 230px;"><footer class="fixedfooter newfooter ng-scope" style="font-size:10px">
+    <div class="pull-right clockCls" style="margin-right: 225px;">
+        <span class="footertext1 ng-binding">Versión: c2.26.0 - 1.25.35</span>
+        <span id="spaceid"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span id="clock" class="clock custmclock" style="color: #98a6ba !important;">14-06-2024 17:10:18</span>
+    </div>
+    <div>
+        <span class="footertext2 ng-binding">2024 © VolPay, Volante Technologies, Inc
+        </span>
+        <span class="footertext2"> | ACH Colombia Transv. 23 No. 97-73 Piso 3 Bogotá Tels. (1)593 8300 / (1)743 8300 || Somos Vigilados por la Superintendencia Financiera de Colombia.
+        </span>
+    </div>
+</footer></div><!-- end ngIf: !iframeFlag -->
+
+    <div style="clear:both"></div>
+    <script type="text/ng-template" id="warning-dialog.html">
+        <div class="modal-content">
+            <div class="modal-header modal-header-warning">
+
+                <h4 class="modal-title">You're Idle. Do Something!</h4>
+            </div>
+            <div class="modal-body" idle-countdown="countdown" ng-init="countdown=5">
+                You'll be logged out in <span class="badge badge-warning">{{countdown}}</span> second(s).
+                <div class="progress progress-striped" style="margin-top:5px">
+                    <div class="progress-bar progress-bar-warning" ng-style="{width: countdown*20+'%'}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="timedout-dialog.html">
+
+        <div class="modal-content">
+            <div class="modal-header modal-header-dander">
+                <h4 class="modal-title">You've Timed Out!</h4>
+            </div>
+            <div class="modal-body">
+                <p>You were idle too long. Please login again.</p>
+            </div>
+
+        </div>
+    </script>
+
+</div></div>
+
+    <!-- ngIf: Log_Footer == 'visible' -->
+
+    <div ng-controller="RefreshController" style="display:block !important;height:auto;position:fixed;bottom:0;width:100%;" class="ng-scope"> </div>
+
+    <!-- Script injection -->
+    <script src="lib/jquery/jquery-3.6.0.min.js"></script>
+    <!-- <script src="lib/jquery-ui/jquery-ui.min.js"></script> -->
+
+    <!-- Latest version -->
+    <!-- jQuery UI-->
+    <script src="lib/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+
+
+    <!-- <script src="lib/bootstrap/bootstrap-v3.4.0.min.js"></script> -->
+    <script src="lib/bootstrap-4.6.0/popper.min.js"></script>
+    <script src="lib/bootstrap-4.6.0/js/bootstrap.min.js"></script>
+    
+    <script src="lib/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <script src="lib/bootstrap-datetimepicker/js/moment.js"></script>
+    <script src="lib/bootstrap-datetimepicker/js/locale/es.js" charset="UTF-8"></script>
+
+    <script src="lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="lib/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js" charset="UTF-8"></script>
+    <script src="lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+
+     <script src="lib/angular/angular-1.8.2.min.js"></script>
+    <!-- <script src="lib/angular/angular.min.js"></script> -->
+    <script src="lib/angular/angular-sanitize.min.js"></script>
+    <script src="lib/angular/angular-touch.min.js"></script>
+    <script src="lib/angular/angular-idle.min.js"></script>
+
+
+    <script src="lib/angular/angular-ui-router-min.js"></script>
+    <script src="lib/angular/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/angular/ocLazyLoad.min.js"></script>
+
+    <script src="lib/d3charts/d3.min.js"></script>
+    <script src="lib/d3charts/nv.d3.js"></script>
+    <script src="lib/d3charts/stream_layers.js"></script>
+
+    <script src="lib/iso-currency/dist/isoCurrency.js"></script>
+
+    <script src="lib/angulartranslate/angular-cookies.js"></script>
+    <script src="lib/angulartranslate/angular-translate.min.js"></script>
+    <script src="lib/angulartranslate/angular-translate-storage-cookie.min.js"></script>
+    <script src="lib/angulartranslate/angular-translate-loader-url.min.js"></script>
+    <script src="lib/angulartranslate/angular-translate-interpolation-messageformat.min.js"></script>
+    <script src="lib/angulartranslate/angular-translate-loader-partial.min.js"></script>
+    <script src="lib/angulartranslate/angular-translate-handler-log.min.js"></script>
+    <script src="lib/angulartranslate/angular-translate-storage-local.min.js"></script>
+    <script src="lib/angulartranslate/angular-translate-loader-static-files.min.js"></script>
+
+    <script src="lib/export-files/angular-file-saver.bundle.js"></script>
+
+    <script src="lib/CryptoJS_v3_1_2/pbkdf2.js" type="text/javascript"></script>
+    <script src="lib/CryptoJS_v3_1_2/sha256.js" type="text/javascript"></script>
+    <script src="lib/CryptoJS_v3_1_2/aes.js" type="text/javascript"></script>
+    <script src="lib/CryptoJS_v3_1_2/hmac-sha256.js" type="text/javascript"></script>
+
+    <script src="lib/js-beautify/web/third-party/codemirror/lib/codemirror.js"></script>
+    <script src="lib/js-beautify/web/third-party/codemirror/mode/javascript/javascript.js"></script>
+    <script src="lib/js-beautify/js/lib/beautify-css.js"></script>
+
+    <script src="lib/js-beautify/js/lib/beautify.js"></script>
+    <script src="lib/js-beautify/js/lib/beautify-css.js"></script>
+    <script src="lib/js-beautify/js/lib/beautify-html.js"></script>
+    <script src="lib/js-beautify/js/test/sanitytest.js"></script>
+
+    <script src="lib/volante-sankey.js"></script>
+    <script src="lib/underscore-min.js"></script>
+
+    <script src="lib/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="lib/ng-infinite-scroll/ng-infinite-scroll.js"></script>
+
+    <script src="lib/floatThead/jquery.floatThead.min.js"></script>
+
+    <script src="lib/select2_angular/select2.min.js"></script>
+    <script src="lib/xmltojson/xml2json.min.js"></script>
+
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="lib/moment/moment-with-locales.min.js"></script>
+    <script src="lib/moment/moment-timezone-with-data.js"></script>
+    <script>
+        window.TextEncoder = window.TextDecoder = null;
+    </script>
+    <script src="lib/text-encoding-master/lib/encoding-indexes.js"></script>
+    <script src="lib/text-encoding-master/lib/encoding.js"></script>
+    <!-- <script src="lib/moment/moment-timezone-with-data.js"></script>  Need to check and remove -->
+
+    <script src="templates/volpay/VPapp.js"></script>
+    <script src="templates/volpay/services/VPservice.js"></script>
+    <script src="templates/volpay/services/dashboardService.js"></script>
+    <script src="templates/volpay/services/customDirectories.js"></script>
+    <script src="templates/volpay/js/VPstatejs.js"></script>
+    <script src="templates/volpay/js/VPlayoutjs.js"></script>
+    <script src="templates/footer/VPfooterCtrl.js"></script>
+    <script src="templates/volpay/services/jsPDF/jspdf.js"></script>
+    <script src="templates/volpay/services/jsPDF/jspdf.plugin.autotable.js"></script>
+
+
+
+<div class="modal-backdrop fade show"></div></body></html>

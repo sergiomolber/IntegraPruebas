@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="0d618ba50f7a4f68bbcc4496c2f1882b8f7ab47970bd843f2a80897ea0f9db8f.html">Pruebas Notificaciones</a></span>
+                > <span class="truncate-60"><a
+                    href="93a2896fe03a844843d3106e43cb3098cb9ed6cb73db3524534cb8e899b1465f.html">CP001 Crear una Reestriccion de Horarios </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 30-07-2024 10:15</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Pruebas Notificaciones</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="16c7de9488b4d0da3e539b2cc4d9546145c0d800be5ecf2f68a39d5ba1d93ee1.html">Cp001
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="27dfb704e5495116e4fa131dfaacc724c76027c7eb82c0135ffaa3abc1a21389.html">Pruebasnotificaciones
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">CP001 Crear una Reestriccion de Horarios
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given Login Exitoso &lt;tipoDeEntidad&gt; &lt;usuario&gt; &lt;clave&gt;<br>When Ingreso Datos de la restriccion con los datos &lt;roles&gt; &lt;IdCorreo&gt;<br>Then Valida mensaje exitos</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="2fe0f45631cfa3b67a3ca35e498a1c28746a5beb99f477aee790d3ccdb204ebe.png" title=" Example: {tipoDeEntidad=&quot;EF&quot;, usuario=&quot;useradminapp@gmail.com&quot;, clave=&quot;Ach.2022*$AU&quot;, roles=&quot;ACH CenitApprover&quot;, IdCorreo=&quot;cerkugidru@gufum.com&quot;}" width="1366"/>
+                <img src="2fe0f45631cfa3b67a3ca35e498a1c28746a5beb99f477aee790d3ccdb204ebe.png" title=" Given Login Exitoso &quot;EF&quot; &quot;useradminapp@gmail.com&quot; &quot;Ach.2022*$AU&quot;" width="1366"/>
+                <img src="2fe0f45631cfa3b67a3ca35e498a1c28746a5beb99f477aee790d3ccdb204ebe.png" title=" Abrir web" width="1366"/>
+                <img src="2fe0f45631cfa3b67a3ca35e498a1c28746a5beb99f477aee790d3ccdb204ebe.png" title=" Seleccionar tipo entidad: EF" width="1366"/>
+                <img src="caf3dc003f414aef3f2ba826174d83415c2616b50dd1fbc697e6d5808b6bc9cf.png" title=" Seleccionar tipo entidad: EF (completed)" width="1366"/>
+                <img src="caf3dc003f414aef3f2ba826174d83415c2616b50dd1fbc697e6d5808b6bc9cf.png" title=" Click boton vamos" width="1366"/>
+                <img src="612e64a57fc3f88f3766dd092a770bbc299530fdf3dd33febfbf1f7e8b6e2752.png" title=" Click boton vamos (completed)" width="1366"/>
+                <img src="612e64a57fc3f88f3766dd092a770bbc299530fdf3dd33febfbf1f7e8b6e2752.png" title=" Escribir usuario y contrasena: useradminapp@gmail.com, Ach.2022*$AU" width="1366"/>
+                <img src="dfd362426d47ddcf32ff1e935e568f97cdaf0e17ff09ebbd44d51b4dcca7978a.png" title=" Escribir usuario y contrasena: useradminapp@gmail.com, Ach.2022*$AU (completed)" width="1366"/>
+                <img src="dfd362426d47ddcf32ff1e935e568f97cdaf0e17ff09ebbd44d51b4dcca7978a.png" title=" Click ingresar" width="1366"/>
+                <img src="04e09b7a7aa2ec1c79515acd4455cca16e3665092a1496c0c1405f72e189da64.png" title=" Click ingresar (completed)" width="1366"/>
+                <img src="04e09b7a7aa2ec1c79515acd4455cca16e3665092a1496c0c1405f72e189da64.png" title=" Validar inicio de sesion" width="1366"/>
+                <img src="560d8623b48cfca77f1bf889e95cb1cb73837d41d105986df39e0d00f71ca241.png" title=" Validar inicio de sesion (completed)" width="1366"/>
+                <img src="560d8623b48cfca77f1bf889e95cb1cb73837d41d105986df39e0d00f71ca241.png" title=" Given Login Exitoso &quot;EF&quot; &quot;useradminapp@gmail.com&quot; &quot;Ach.2022*$AU&quot; (completed)" width="1366"/>
+                <img src="560d8623b48cfca77f1bf889e95cb1cb73837d41d105986df39e0d00f71ca241.png" title=" When Ingreso Datos de la restriccion con los datos &quot;ACH CenitApprover&quot; &quot;cerkugidru@gufum.com&quot;" width="1366"/>
+                <img src="501e61a6a029858e7bdaa3d8c939056c4a29d75aa4d42f08d4a16675aee7fb6c.png" title=" Click usuarios y roles" width="1366"/>
+                <img src="d67cb980d9d9d1f613b1aad3370bb4327a036fd5a1f8006423a39072ea57d4e2.png" title=" Click usuarios y roles (completed)" width="1366"/>
+                <img src="d67cb980d9d9d1f613b1aad3370bb4327a036fd5a1f8006423a39072ea57d4e2.png" title=" Click resstriccion horarios" width="1366"/>
+                <img src="35bcc3cc3eb0fd849602d473509f6933d68c0306d0720de5e27016b049257ad0.png" title=" Click resstriccion horarios (completed)" width="1366"/>
+                <img src="35bcc3cc3eb0fd849602d473509f6933d68c0306d0720de5e27016b049257ad0.png" title=" Seleccionar roles: ACH CenitApprover" width="1366"/>
+                <img src="9701466de8c59c5130a58138bee4408714e7d59e91b904dc3a203f531b7c47cc.png" title=" Seleccionar roles: ACH CenitApprover (completed)" width="1366"/>
+                <img src="9701466de8c59c5130a58138bee4408714e7d59e91b904dc3a203f531b7c47cc.png" title=" Ingresar email: cerkugidru@gufum.com" width="1366"/>
+                <img src="819b8f516aa24ce5969afff66e09a9c9098b6722cfb85bb248588c4295914023.png" title=" Ingresar email: cerkugidru@gufum.com (completed)" width="1366"/>
+                <img src="819b8f516aa24ce5969afff66e09a9c9098b6722cfb85bb248588c4295914023.png" title=" Click diario" width="1366"/>
+                <img src="1922e74a44beecaf46682ee66bc027f5cd75f44a61d76c29a02007eaebdc18ca.png" title=" Click diario (completed)" width="1366"/>
+                <img src="1922e74a44beecaf46682ee66bc027f5cd75f44a61d76c29a02007eaebdc18ca.png" title=" Seleccionar dias habilitados" width="1366"/>
+                <img src="b4aae81e292488f0b0bd72cd465ca7344c76d66aec7432a3014d976a0d432535.png" title=" Seleccionar dias habilitados (completed)" width="1366"/>
+                <img src="b4aae81e292488f0b0bd72cd465ca7344c76d66aec7432a3014d976a0d432535.png" title=" Click hora inicio" width="1366"/>
+                <img src="156597643eaf1e47d4e560bbb5fd4a9ccf3c6ba29876bc67615be1a12ac37346.png" title=" Click hora inicio (completed)" width="1366"/>
+                <img src="156597643eaf1e47d4e560bbb5fd4a9ccf3c6ba29876bc67615be1a12ac37346.png" title=" Click insertar una hora" width="1366"/>
+                <img src="844a1ce309e4a8df5141ebbd7a3032c000440096a98d99440c55f8d9c16ecbe9.png" title=" Click insertar una hora (completed)" width="1366"/>
+                <img src="844a1ce309e4a8df5141ebbd7a3032c000440096a98d99440c55f8d9c16ecbe9.png" title=" Click hora fin" width="1366"/>
+                <img src="338b86d398bef20daed68b629e5b8e0f8ecca4f7a12348b386a0bfc0639abf8b.png" title=" Click hora fin (completed)" width="1366"/>
+                <img src="338b86d398bef20daed68b629e5b8e0f8ecca4f7a12348b386a0bfc0639abf8b.png" title=" Click insertar una hora" width="1366"/>
+                <img src="60d7b7ec1eb84b73fe5bb972d28c93762efa6c7adbcff6e22eed7787829754b2.png" title=" Click insertar una hora (completed)" width="1366"/>
+                <img src="60d7b7ec1eb84b73fe5bb972d28c93762efa6c7adbcff6e22eed7787829754b2.png" title=" Click insertar una hora" width="1366"/>
+                <img src="e969f13be34e64e7d3a13d85326ae69cbac7cfecace0ab4ee69dd92c82552fea.png" title=" Click insertar una hora (completed)" width="1366"/>
+                <img src="e969f13be34e64e7d3a13d85326ae69cbac7cfecace0ab4ee69dd92c82552fea.png" title=" Click enviar" width="1366"/>
+                <img src="b19cddbfe627cf9763bf4c85f92045d3c908fe0abdfa0a1374fba418025c5b8b.png" title=" Click enviar (completed)" width="1366"/>
+                <img src="b19cddbfe627cf9763bf4c85f92045d3c908fe0abdfa0a1374fba418025c5b8b.png" title=" When Ingreso Datos de la restriccion con los datos &quot;ACH CenitApprover&quot; &quot;cerkugidru@gufum.com&quot; (completed)" width="1366"/>
+                <img src="b19cddbfe627cf9763bf4c85f92045d3c908fe0abdfa0a1374fba418025c5b8b.png" title=" Then Valida mensaje exitos" width="1366"/>
+                <img src="b19cddbfe627cf9763bf4c85f92045d3c908fe0abdfa0a1374fba418025c5b8b.png" title=" Restriccion creada con exito" width="1366"/>
+                <img src="b19cddbfe627cf9763bf4c85f92045d3c908fe0abdfa0a1374fba418025c5b8b.png" title=" Restriccion creada con exito (completed)" width="1366"/>
+                <img src="b19cddbfe627cf9763bf4c85f92045d3c908fe0abdfa0a1374fba418025c5b8b.png" title=" Then Valida mensaje exitos (completed)" width="1366"/>
+                <img src="b19cddbfe627cf9763bf4c85f92045d3c908fe0abdfa0a1374fba418025c5b8b.png" title=" Example: {tipoDeEntidad=&quot;EF&quot;, usuario=&quot;useradminapp@gmail.com&quot;, clave=&quot;Ach.2022*$AU&quot;, roles=&quot;ACH CenitApprover&quot;, IdCorreo=&quot;cerkugidru@gufum.com&quot;} (completed): <span class='success-color'>SUCCESS</span>" width="1366"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.0.80</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="cde7e4711695d8984ad66eb0e155aa71bb7ae9c66c38b9a16e1d68870243233f.html">Prueba De Operaciones De Ciclo Y Subir Archivo</a></span>
+                > <span class="truncate-60"><a
+                    href="a699c7e0f898ff892f9dc1840d4367124469c3f9afbe133565865d8140147591.html">Subir un archivo Nacham y validar si es exitoso </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 24-07-2024 15:06</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Prueba De Operaciones De Ciclo Y Subir Archivo</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="1df31b407986bd4518d8c9f0aa8ab56853413bad26814ea1a54acb2bd8cae36e.html">Modulodetransferencia
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="4d96c2845c89dee5536825ed12faafd73123af33149107a7281cfeaa08ef2f9a.html">Subirarchivoexitosodevolucion
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Subir un archivo Nacham y validar si es exitoso
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given Login exitoso &lt;tipoDeEntidad&gt; &lt;usuario&gt; &lt;clave&gt;<br>When Ingresar a subir archivo exitoso y diligenciar el formulario &lt;entidad&gt; &lt;servicio&gt; &lt;formato&gt; &lt;urlArchivo&gt;<br>Then Valido el cargue y el estado del archivo exitoso &lt;nombreArchivo&gt; &lt;usuario&gt; &lt;clave&gt;</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="4370e4c6ece57c40a7bb3c1887ee5a22ca6b1330678f39a9d556aa30991d8bf5.png" title=" Example: {tipoDeEntidad=&quot;EF&quot;, usuario=&quot;useradminapp@gmail.com&quot;, clave=&quot;Ach.2022*$AU&quot;, entidad=&quot;OCCIDENTE(BANOCCIDEN)&quot;, servicio=&quot;Compensaci&oacute;n de Pagos Interbancarios&quot;, formato=&quot;Nacham&quot;, urlArchivo=&quot;C:\Users\danielpinilla\Documents\como quiera\apis-fsfb-creacion-data\ACH\ACH\0001023.002.1&quot;, nombreArchivo=&quot;0001023.002.1&quot;}" width="1366"/>
+                <img src="4370e4c6ece57c40a7bb3c1887ee5a22ca6b1330678f39a9d556aa30991d8bf5.png" title=" Given Login exitoso &quot;EF&quot; &quot;useradminapp@gmail.com&quot; &quot;Ach.2022*$AU&quot;" width="1366"/>
+                <img src="4370e4c6ece57c40a7bb3c1887ee5a22ca6b1330678f39a9d556aa30991d8bf5.png" title=" Abrir web" width="1366"/>
+                <img src="4370e4c6ece57c40a7bb3c1887ee5a22ca6b1330678f39a9d556aa30991d8bf5.png" title=" Seleccionar tipo entidad: EF" width="1366"/>
+                <img src="caf3dc003f414aef3f2ba826174d83415c2616b50dd1fbc697e6d5808b6bc9cf.png" title=" Seleccionar tipo entidad: EF (completed)" width="1366"/>
+                <img src="caf3dc003f414aef3f2ba826174d83415c2616b50dd1fbc697e6d5808b6bc9cf.png" title=" Click boton vamos" width="1366"/>
+                <img src="3721cdd0b89f90746cdebccb7eecca6256858573939c624c8c22e11f44566459.png" title=" Click boton vamos (completed)" width="1366"/>
+                <img src="3721cdd0b89f90746cdebccb7eecca6256858573939c624c8c22e11f44566459.png" title=" Escribir usuario y contrasena: useradminapp@gmail.com, Ach.2022*$AU" width="1366"/>
+                <img src="737b64733dfbf816726c5b38027ef2a1a6e8368b9db0a0df3dd86cdc5226bc3c.png" title=" Escribir usuario y contrasena: useradminapp@gmail.com, Ach.2022*$AU (completed)" width="1366"/>
+                <img src="737b64733dfbf816726c5b38027ef2a1a6e8368b9db0a0df3dd86cdc5226bc3c.png" title=" Click ingresar" width="1366"/>
+                <img src="0b0ca6747b9f0ce2b76c47b1eb0ebd231ccfdbc7e07de57031bcfa5426014d65.png" title=" Click ingresar (completed)" width="1366"/>
+                <img src="0b0ca6747b9f0ce2b76c47b1eb0ebd231ccfdbc7e07de57031bcfa5426014d65.png" title=" Validar inicio de sesion" width="1366"/>
+                <img src="4e582f903c44c127a024fb0c3af324c9d819695b563fce753cc11bf3731b5b5c.png" title=" Validar inicio de sesion (completed)" width="1366"/>
+                <img src="4e582f903c44c127a024fb0c3af324c9d819695b563fce753cc11bf3731b5b5c.png" title=" Given Login exitoso &quot;EF&quot; &quot;useradminapp@gmail.com&quot; &quot;Ach.2022*$AU&quot; (completed)" width="1366"/>
+                <img src="4e582f903c44c127a024fb0c3af324c9d819695b563fce753cc11bf3731b5b5c.png" title=" When Ingresar a subir archivo exitoso y diligenciar el formulario &quot;OCCIDENTE(BANOCCIDEN)&quot; &quot;Compensaci&oacute;n de Pagos Interbancarios&quot; &quot;Nacham&quot; &quot;C:\Users\danielpinilla\Documents\como quiera\apis-fsfb-creacion-data\ACH\ACH\0001023.002.1&quot;" width="1366"/>
+                <img src="c25059a4d2ec694f26823aff0e2a42323a35e43b1e7c13fdb2d1c2d1b1020f7b.png" title=" Click modulo de transferencias" width="1366"/>
+                <img src="b68125c28e453cba64e234233cd1dd842ff9364bd592408a80322eb9976ed1bd.png" title=" Click modulo de transferencias (completed)" width="1366"/>
+                <img src="b68125c28e453cba64e234233cd1dd842ff9364bd592408a80322eb9976ed1bd.png" title=" Click subir archivo" width="1366"/>
+                <img src="e3e31a274c80dbefdc5c6daa9d8b22c000222dff911057ec792a17a9c4c26d10.png" title=" Click subir archivo (completed)" width="1366"/>
+                <img src="e3e31a274c80dbefdc5c6daa9d8b22c000222dff911057ec792a17a9c4c26d10.png" title=" Seleccionar entidad: OCCIDENTE(BANOCCIDEN)" width="1366"/>
+                <img src="65b8728e1cc696d9319682a8c534fae744304f93b0348aa5430c5a4bb83f04a0.png" title=" Seleccionar entidad: OCCIDENTE(BANOCCIDEN) (completed)" width="1366"/>
+                <img src="65b8728e1cc696d9319682a8c534fae744304f93b0348aa5430c5a4bb83f04a0.png" title=" Seleccionar servicio: Compensaci&oacute;n de Pagos Interbancarios" width="1366"/>
+                <img src="b8904b499cc021dc120f95f4fda1cba0dd43d5527e1d1724e3bb52ada043e7c7.png" title=" Seleccionar servicio: Compensaci&oacute;n de Pagos Interbancarios (completed)" width="1366"/>
+                <img src="b8904b499cc021dc120f95f4fda1cba0dd43d5527e1d1724e3bb52ada043e7c7.png" title=" Seleccionar formato: Nacham" width="1366"/>
+                <img src="bb530ef77521cfd21696681ec3d9ef4f1178cd61b4750dbedbc3011f584db6bf.png" title=" Seleccionar formato: Nacham (completed)" width="1366"/>
+                <img src="bb530ef77521cfd21696681ec3d9ef4f1178cd61b4750dbedbc3011f584db6bf.png" title=" Subir archivo" width="1366"/>
+                <img src="62ae4118389930cd6957cf43bfedd6624623f20e72f964d39842005ffd347366.png" title=" Subir archivo (completed)" width="1366"/>
+                <img src="62ae4118389930cd6957cf43bfedd6624623f20e72f964d39842005ffd347366.png" title=" Validar msj exitoso" width="1366"/>
+                <img src="62ae4118389930cd6957cf43bfedd6624623f20e72f964d39842005ffd347366.png" title=" Validar msj exitoso (completed)" width="1366"/>
+                <img src="62ae4118389930cd6957cf43bfedd6624623f20e72f964d39842005ffd347366.png" title=" Click en instrucciones recibidas" width="1366"/>
+                <img src="4d928779284e84fe33d68e34bc2fe38806f45688bfba214d72a15d1801a7bcb9.png" title=" Click en instrucciones recibidas (completed)" width="1366"/>
+                <img src="4d928779284e84fe33d68e34bc2fe38806f45688bfba214d72a15d1801a7bcb9.png" title=" Ingresar transacciones" width="1366"/>
+                <img src="85df60bd77fb45bde386aca9a62cafa38533ef7c95e8a63dd51f4bbb467f74ed.png" title=" Ingresar transacciones (completed)" width="1366"/>
+                <img src="85df60bd77fb45bde386aca9a62cafa38533ef7c95e8a63dd51f4bbb467f74ed.png" title=" When Ingresar a subir archivo exitoso y diligenciar el formulario &quot;OCCIDENTE(BANOCCIDEN)&quot; &quot;Compensaci&oacute;n de Pagos Interbancarios&quot; &quot;Nacham&quot; &quot;C:\Users\danielpinilla\Documents\como quiera\apis-fsfb-creacion-data\ACH\ACH\0001023.002.1&quot; (completed)" width="1366"/>
+                <img src="85df60bd77fb45bde386aca9a62cafa38533ef7c95e8a63dd51f4bbb467f74ed.png" title=" Then Valido el cargue y el estado del archivo exitoso &quot;0001023.002.1&quot; &quot;useradminapp@gmail.com&quot; &quot;Ach.2022*$AU&quot;" width="1366"/>
+                <img src="85df60bd77fb45bde386aca9a62cafa38533ef7c95e8a63dd51f4bbb467f74ed.png" title=" Ingresar autorizacion aprover: 0001023.002.1, useradminapp@gmail.com" width="1366"/>
+                <img src="a93c49e5809223b412fd34d87dff1010df0ceda3461973afbd4a814d03880c7c.png" title=" Ingresar autorizacion aprover: 0001023.002.1, useradminapp@gmail.com (completed)" width="1366"/>
+                <img src="a93c49e5809223b412fd34d87dff1010df0ceda3461973afbd4a814d03880c7c.png" title=" Then Valido el cargue y el estado del archivo exitoso &quot;0001023.002.1&quot; &quot;useradminapp@gmail.com&quot; &quot;Ach.2022*$AU&quot; (completed)" width="1366"/>
+                <img src="a93c49e5809223b412fd34d87dff1010df0ceda3461973afbd4a814d03880c7c.png" title=" Example: {tipoDeEntidad=&quot;EF&quot;, usuario=&quot;useradminapp@gmail.com&quot;, clave=&quot;Ach.2022*$AU&quot;, entidad=&quot;OCCIDENTE(BANOCCIDEN)&quot;, servicio=&quot;Compensaci&oacute;n de Pagos Interbancarios&quot;, formato=&quot;Nacham&quot;, urlArchivo=&quot;C:\Users\danielpinilla\Documents\como quiera\apis-fsfb-creacion-data\ACH\ACH\0001023.002.1&quot;, nombreArchivo=&quot;0001023.002.1&quot;} (completed): <span class='success-color'>SUCCESS</span>" width="1366"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.0.80</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Pruebas Notificaciones" skipped="0" tests="2" time="63.23" timestamp="2024-07-30 10:15:59"><testcase name="CP001 Crear una Reestriccion de Horarios"/><testcase name="CP002 Validar excepción de OTP"/></testsuite>

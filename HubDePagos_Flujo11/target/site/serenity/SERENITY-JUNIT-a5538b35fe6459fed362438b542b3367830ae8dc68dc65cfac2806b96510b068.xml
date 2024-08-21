@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Prueba de subir archivo" skipped="0" tests="1" time="82.55" timestamp="2024-06-18 05:02:58"><testcase name="Subir un archivo Nacham y validar si es exitoso"><error message="Cannot locate option with value: 0001002.016.1&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PE-HO-785', ip: '192.168.80.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_412'&#10;Driver info: driver.version: unknown&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PE-HO-785', ip: '192.168.80.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_412'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">Cannot locate option with value: 0001002.016.1
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PE-HO-785', ip: '192.168.80.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_412'
+Driver info: driver.version: unknown
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PE-HO-785', ip: '192.168.80.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_412'
+Driver info: driver.version: unknown</error><system-err>Cannot locate option with value: 0001002.016.1
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PE-HO-785', ip: '192.168.80.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_412'
+Driver info: driver.version: unknown
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PE-HO-785', ip: '192.168.80.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_412'
+Driver info: driver.version: unknown&#13;
+com.integra.ach.steps.IntegraInicioStep.seleccionarTipoEntidad(IntegraInicioStep.java:24)&#13;
+com.integra.ach.stepDefinitions.SubirArchivoExitosoStepDefinition.valido_el_cargue_y_el_estado_del_archivo_exitoso(SubirArchivoExitosoStepDefinition.java:64)&#13;
+✽.Valido el cargue y el estado del archivo exitoso "0001002.016.1" "useradminapp@gmail.com" "Ach.2022*$AU"(src/test/resources/com.integra.ach.features/SubirArchivo.feature:8)&#13;
+</system-err></testcase></testsuite>

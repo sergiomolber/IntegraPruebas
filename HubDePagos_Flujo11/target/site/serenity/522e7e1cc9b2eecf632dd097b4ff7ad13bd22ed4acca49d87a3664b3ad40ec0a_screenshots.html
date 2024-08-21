@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="2e7f8de89cff518d11cca653f57aa73d5aa770a66cffc03ae32a19c063bf671a.html">Pruebas Consulta Consumo ERP</a></span>
+                > <span class="truncate-60"><a
+                    href="522e7e1cc9b2eecf632dd097b4ff7ad13bd22ed4acca49d87a3664b3ad40ec0a.html">Consulta consumo ERP </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 22-07-2024 12:09</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Pruebas Consulta Consumo ERP</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="2ed702094ac4b5dda0a813c32762af78e3e472011ef409e9991a58fc247fd1b1.html">ConsultaConsumoERP
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Consulta consumo ERP
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given Login exitoso &lt;tipoDeEntidad&gt; &lt;usuario&gt; &lt;clave&gt;<br>When Ingresar al modulo de ciclos y consultar un consumo de ERP &lt;fecha&gt;<br>Then Valido Inicio de solicitud exitoso</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="b4536c8b55f7245cbc6d1419b641837abb62ee4669048a71a1ca741c694b395a.png" title=" Example: {tipoDeEntidad=&quot;EF&quot;, usuario=&quot;cenitoperatoraut@achcolombia.com.co&quot;, clave=&quot;ColombiaAch.2023+&quot;, fecha=&quot;2023-11-07&quot;}" width="1366"/>
+                <img src="b4536c8b55f7245cbc6d1419b641837abb62ee4669048a71a1ca741c694b395a.png" title=" Given Login exitoso &quot;EF&quot; &quot;cenitoperatoraut@achcolombia.com.co&quot; &quot;ColombiaAch.2023+&quot;" width="1366"/>
+                <img src="b4536c8b55f7245cbc6d1419b641837abb62ee4669048a71a1ca741c694b395a.png" title=" Abrir web" width="1366"/>
+                <img src="47e9b454c00c06a3988ab8ba14283cf6332e011c6cfe2f19bbe5b6607a28c854.png" title=" Seleccionar tipo entidad: EF" width="1366"/>
+                <img src="caf3dc003f414aef3f2ba826174d83415c2616b50dd1fbc697e6d5808b6bc9cf.png" title=" Seleccionar tipo entidad: EF (completed)" width="1366"/>
+                <img src="caf3dc003f414aef3f2ba826174d83415c2616b50dd1fbc697e6d5808b6bc9cf.png" title=" Click boton vamos" width="1366"/>
+                <img src="6c5e2a5f9716e08539a5b81cf92714b177a0027badd3b9c7954f714ab8b5c84e.png" title=" Click boton vamos (completed)" width="1366"/>
+                <img src="6c5e2a5f9716e08539a5b81cf92714b177a0027badd3b9c7954f714ab8b5c84e.png" title=" Escribir usuario y contrasena: cenitoperatoraut@achcolombia.com.co, ColombiaAch.2023+" width="1366"/>
+                <img src="152706605e085daa7e2808e3ad540ee1bf93dad6aaf1621ef4f90805de4fe1ff.png" title=" Escribir usuario y contrasena: cenitoperatoraut@achcolombia.com.co, ColombiaAch.2023+ (completed)" width="1366"/>
+                <img src="152706605e085daa7e2808e3ad540ee1bf93dad6aaf1621ef4f90805de4fe1ff.png" title=" Click ingresar" width="1366"/>
+                <img src="e1497968208524fba5d76c6ff700a0c94f7363c11881739db6a3ba9e5bf1c3d9.png" title=" Click ingresar (completed)" width="1366"/>
+                <img src="e1497968208524fba5d76c6ff700a0c94f7363c11881739db6a3ba9e5bf1c3d9.png" title=" Validar inicio de sesion" width="1366"/>
+                <img src="8ddfaf8afa5a4b37271fc583a7da4d58d0e5c389eff3be39bc3baaec1ab88771.png" title=" Validar inicio de sesion (completed)" width="1366"/>
+                <img src="8ddfaf8afa5a4b37271fc583a7da4d58d0e5c389eff3be39bc3baaec1ab88771.png" title=" Given Login exitoso &quot;EF&quot; &quot;cenitoperatoraut@achcolombia.com.co&quot; &quot;ColombiaAch.2023+&quot; (completed)" width="1366"/>
+                <img src="8ddfaf8afa5a4b37271fc583a7da4d58d0e5c389eff3be39bc3baaec1ab88771.png" title=" When Ingresar al modulo de ciclos y consultar un consumo de ERP &quot;2023-11-07&quot;" width="1366"/>
+                <img src="6ce96c1f56e2ff455b045e49d51a86280d6ec7d699601b24796b2a98f8ad2006.png" title=" Click modulo de ciclos" width="1366"/>
+                <img src="6679fdc5d2cbbbb46efa1ba1542b015ca84858642328464047123b4f2b172efb.png" title=" Click modulo de ciclos (completed)" width="1366"/>
+                <img src="6679fdc5d2cbbbb46efa1ba1542b015ca84858642328464047123b4f2b172efb.png" title=" Click integrar ERP" width="1366"/>
+                <img src="9a593c5c2fb33133f1b5b2ef1199c9ffaf8f37232d06380fa732c58dd3032a1b.png" title=" Click integrar ERP (completed)" width="1366"/>
+                <img src="9a593c5c2fb33133f1b5b2ef1199c9ffaf8f37232d06380fa732c58dd3032a1b.png" title=" Ingreso fecha: 2023-11-07" width="1366"/>
+                <img src="45ca0d94096bd5eccabc82469a6353474df199414d6b2ea1bf7f73871397dc34.png" title=" Ingreso fecha: 2023-11-07 (completed)" width="1366"/>
+                <img src="45ca0d94096bd5eccabc82469a6353474df199414d6b2ea1bf7f73871397dc34.png" title=" Click en buscar" width="1366"/>
+                <img src="7e10e691a8f68a58286d035e96b9d31be543d39487f3197ced900416fa9c74bc.png" title=" Click en buscar (completed)" width="1366"/>
+                <img src="7e10e691a8f68a58286d035e96b9d31be543d39487f3197ced900416fa9c74bc.png" title=" When Ingresar al modulo de ciclos y consultar un consumo de ERP &quot;2023-11-07&quot; (completed)" width="1366"/>
+                <img src="7e10e691a8f68a58286d035e96b9d31be543d39487f3197ced900416fa9c74bc.png" title=" Then Valido Inicio de solicitud exitoso" width="1366"/>
+                <img src="7e10e691a8f68a58286d035e96b9d31be543d39487f3197ced900416fa9c74bc.png" title=" Validar busqueda" width="1366"/>
+                <img src="e59e603c7e9cd3d58e48c620a62770796db42e2f6389fada0b2f1727f19fb62d.png" title=" Validar busqueda (completed)" width="1366"/>
+                <img src="e59e603c7e9cd3d58e48c620a62770796db42e2f6389fada0b2f1727f19fb62d.png" title=" Click en iniciar solicitud" width="1366"/>
+                <img src="8723a988786056a181bb7c938d9656962db3e62fa5e5080b40efde8c07e3647a.png" title=" Click en iniciar solicitud (completed)" width="1366"/>
+                <img src="8723a988786056a181bb7c938d9656962db3e62fa5e5080b40efde8c07e3647a.png" title=" Click en enviar" width="1366"/>
+                <img src="85ef84fab4fad0744d45f2ff36b48dd7ae355178c7b5207d0498a3e99e3721d0.png" title=" Click en enviar (completed)" width="1366"/>
+                <img src="85ef84fab4fad0744d45f2ff36b48dd7ae355178c7b5207d0498a3e99e3721d0.png" title=" Validar mensaje exitoso" width="1366"/>
+                <img src="ce4790739d94e1bfd0e854d3b5af77685f85f7598121409e459c5ac823442fca.png" title=" Validar mensaje exitoso (completed)" width="1366"/>
+                <img src="ce4790739d94e1bfd0e854d3b5af77685f85f7598121409e459c5ac823442fca.png" title=" Then Valido Inicio de solicitud exitoso (completed)" width="1366"/>
+                <img src="ce4790739d94e1bfd0e854d3b5af77685f85f7598121409e459c5ac823442fca.png" title=" Example: {tipoDeEntidad=&quot;EF&quot;, usuario=&quot;cenitoperatoraut@achcolombia.com.co&quot;, clave=&quot;ColombiaAch.2023+&quot;, fecha=&quot;2023-11-07&quot;} (completed): <span class='success-color'>SUCCESS</span>" width="1366"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.0.80</span>
+</div>
+</body>
+</html>

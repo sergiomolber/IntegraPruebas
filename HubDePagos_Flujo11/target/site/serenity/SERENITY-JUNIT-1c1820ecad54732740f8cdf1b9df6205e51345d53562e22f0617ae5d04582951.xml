@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Prueba de operaciones de ciclo y subir archivo" skipped="0" tests="1" time="2.33" timestamp="2024-07-24 10:08:28"><testcase name="Hacer cierre de todos los ciclo exitoso"><error message="Could not instantiate new WebDriver instance of type class org.openqa.selenium.chrome.ChromeDriver (session not created: This version of ChromeDriver only supports Chrome version 125&#10;Current browser version is 127.0.6533.73 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PE-HO-785', ip: '192.168.80.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_412'&#10;Driver info: driver.version: ProvideNewDriver&#10;remote stacktrace: &#9;GetHandleVerifier [0x0057B8E3+45827]&#10;&#9;(No symbol) [0x0050DCC4]&#10;&#9;(No symbol) [0x0040150F]&#10;&#9;(No symbol) [0x00433FDA]&#10;&#9;(No symbol) [0x004333CD]&#10;&#9;(No symbol) [0x0042E400]&#10;&#9;(No symbol) [0x0042A339]&#10;&#9;(No symbol) [0x0046C9A2]&#10;&#9;(No symbol) [0x0046C1CA]&#10;&#9;(No symbol) [0x00462B96]&#10;&#9;(No symbol) [0x00436998]&#10;&#9;(No symbol) [0x0043751D]&#10;&#9;GetHandleVerifier [0x00834513+2899763]&#10;&#9;GetHandleVerifier [0x0088793D+3240797]&#10;&#9;GetHandleVerifier [0x006013B4+593364]&#10;&#9;GetHandleVerifier [0x006082DC+621820]&#10;&#9;(No symbol) [0x005170A4]&#10;&#9;(No symbol) [0x005137A8]&#10;&#9;(No symbol) [0x00513947]&#10;&#9;(No symbol) [0x005059FE]&#10;&#9;BaseThreadInitThunk [0x75AEFCC9+25]&#10;&#9;RtlGetAppContainerNamedObjectPath [0x77CB80CE+286]&#10;&#9;RtlGetAppContainerNamedObjectPath [0x77CB809E+238]&#10;). See below for more details." type="net.thucydides.core.webdriver.DriverConfigurationError">Could not instantiate new WebDriver instance of type class org.openqa.selenium.chrome.ChromeDriver (session not created: This version of ChromeDriver only supports Chrome version 125
+Current browser version is 127.0.6533.73 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PE-HO-785', ip: '192.168.80.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_412'
+Driver info: driver.version: ProvideNewDriver
+remote stacktrace: 	GetHandleVerifier [0x0057B8E3+45827]
+	(No symbol) [0x0050DCC4]
+	(No symbol) [0x0040150F]
+	(No symbol) [0x00433FDA]
+	(No symbol) [0x004333CD]
+	(No symbol) [0x0042E400]
+	(No symbol) [0x0042A339]
+	(No symbol) [0x0046C9A2]
+	(No symbol) [0x0046C1CA]
+	(No symbol) [0x00462B96]
+	(No symbol) [0x00436998]
+	(No symbol) [0x0043751D]
+	GetHandleVerifier [0x00834513+2899763]
+	GetHandleVerifier [0x0088793D+3240797]
+	GetHandleVerifier [0x006013B4+593364]
+	GetHandleVerifier [0x006082DC+621820]
+	(No symbol) [0x005170A4]
+	(No symbol) [0x005137A8]
+	(No symbol) [0x00513947]
+	(No symbol) [0x005059FE]
+	BaseThreadInitThunk [0x75AEFCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77CB80CE+286]
+	RtlGetAppContainerNamedObjectPath [0x77CB809E+238]
+). See below for more details.</error><system-err>Could not instantiate new WebDriver instance of type class org.openqa.selenium.chrome.ChromeDriver (session not created: This version of ChromeDriver only supports Chrome version 125
+Current browser version is 127.0.6533.73 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PE-HO-785', ip: '192.168.80.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_412'
+Driver info: driver.version: ProvideNewDriver
+remote stacktrace: 	GetHandleVerifier [0x0057B8E3+45827]
+	(No symbol) [0x0050DCC4]
+	(No symbol) [0x0040150F]
+	(No symbol) [0x00433FDA]
+	(No symbol) [0x004333CD]
+	(No symbol) [0x0042E400]
+	(No symbol) [0x0042A339]
+	(No symbol) [0x0046C9A2]
+	(No symbol) [0x0046C1CA]
+	(No symbol) [0x00462B96]
+	(No symbol) [0x00436998]
+	(No symbol) [0x0043751D]
+	GetHandleVerifier [0x00834513+2899763]
+	GetHandleVerifier [0x0088793D+3240797]
+	GetHandleVerifier [0x006013B4+593364]
+	GetHandleVerifier [0x006082DC+621820]
+	(No symbol) [0x005170A4]
+	(No symbol) [0x005137A8]
+	(No symbol) [0x00513947]
+	(No symbol) [0x005059FE]
+	BaseThreadInitThunk [0x75AEFCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77CB80CE+286]
+	RtlGetAppContainerNamedObjectPath [0x77CB809E+238]
+). See below for more details.&#13;
+com.integra.ach.steps.IntegraInicioStep.abrirWeb(IntegraInicioStep.java:16)&#13;
+com.integra.ach.stepDefinitions.ConsultaDeCierresDeCicloStepDefinition.loginExitosoParaCierreDeCiclo(ConsultaDeCierresDeCicloStepDefinition.java:23)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+com.integra.ach.runners.RunnerPersonalizado.run(RunnerPersonalizado.java:52)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
+</system-err></testcase></testsuite>
