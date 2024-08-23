@@ -1,0 +1,1 @@
+gradle clean test --tests *com.integra.ach.runners.CierreDeTodosLosCiclosRunner aggregate & cd target/site/serenity & index.html
